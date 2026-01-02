@@ -1,0 +1,529 @@
+/*
+  Karina Ramai • Arquitetura
+  Estilos customizados
+  ================================
+*/
+
+/*
+  Paleta inspirada nas fotos:
+  - Kraft / areia / bege
+  - Laranja (tag/logo)
+  - Taupe / marrom / grafite suave
+*/
+:root {
+  --sand: #cfc6b3;    /* kraft/sand */
+  --paper: #f6f1ea;   /* off-white/papel */
+  --taupe: #7b7166;   /* cinza-terroso */
+  --earth: #6c432f;   /* marrom */
+  --graphite: #1f1f1f;/* texto forte */
+  --accent: #e36b2c;  /* laranja assinatura */
+  --accent-2: #ff8a3d; /* laranja claro para hover */
+}
+
+/* ================================
+   Base
+   ================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--graphite);
+  background: radial-gradient(1200px 800px at 10% 0%, #ffffff 0%, var(--paper) 55%, #efe8dd 100%);
+}
+
+/* ================================
+   Tipografia
+   ================================ */
+.font-serif {
+  font-family: "Playfair Display", serif;
+}
+
+.font-signature {
+  font-family: "Allura", cursive;
+}
+
+/* ================================
+   Texturas e Fundos
+   ================================ */
+/* Micro textura sutil (kraft/papel) sem imagem externa */
+.paper-texture {
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(0,0,0,0.05) 0 1px, transparent 1px),
+    radial-gradient(circle at 30% 40%, rgba(0,0,0,0.035) 0 1px, transparent 1px),
+    radial-gradient(circle at 60% 20%, rgba(0,0,0,0.03) 0 1px, transparent 1px);
+  background-size: 180px 180px, 220px 220px, 260px 260px;
+  background-position: 0 0, 40px 20px, 80px 60px;
+}
+
+/* ================================
+   Botões
+   ================================ */
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-accent:hover {
+  background: var(--accent-2);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(227, 107, 44, 0.3);
+}
+
+.btn-accent:hover::before {
+  left: 100%;
+}
+
+.btn-accent:active {
+  transform: translateY(0);
+}
+
+.ring-accent:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(227,107,44,.25);
+  border-color: rgba(227,107,44,.55);
+}
+
+/* ================================
+   Cards e Hover Effects
+   ================================ */
+.card-hover {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s ease;
+  will-change: transform;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 25px 60px rgba(0,0,0,.15);
+  border-color: rgba(227,107,44,.2);
+}
+
+/* Efeito de brilho sutil nos cards */
+.card-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card-hover:hover::after {
+  opacity: 1;
+}
+
+/* ================================
+   Modal
+   ================================ */
+.modal-backdrop {
+  background: rgba(15,15,15,.55);
+  backdrop-filter: blur(6px);
+}
+
+/* ================================
+   Navegação Desktop
+   ================================ */
+.nav-link {
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+  background: rgba(227,107,44,.08);
+  transform: translateY(-1px);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.nav-link:hover::after {
+  width: 60%;
+}
+
+/* ================================
+   Navegação Mobile
+   ================================ */
+.mobile-link {
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: var(--accent);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.mobile-link:hover {
+  color: var(--accent);
+  background: rgba(227,107,44,.1);
+  padding-left: 1.5rem;
+}
+
+.mobile-link:hover::before {
+  transform: scaleY(1);
+}
+
+/* ================================
+   Responsividade
+   ================================ */
+/* Fonte base maior para monitores menores */
+@media (max-width: 1080px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* ================================
+   Imagens
+   ================================ */
+.img-container {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--paper) 0%, var(--sand) 100%);
+}
+
+.img-container img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-container:hover img {
+  transform: scale(1.05);
+}
+
+/* ================================
+   Imagem do Projeto Hero - Efeito Fade
+   ================================ */
+.hero-project-container {
+  background: transparent;
+  border-radius: 1.5rem;
+  padding: 0.75rem;
+}
+
+.hero-project-img {
+  border-radius: 2rem;
+  /* Máscara radial para fade nos cantos */
+  -webkit-mask-image: radial-gradient(
+    ellipse 95% 95% at center,
+    black 70%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 95% 95% at center,
+    black 70%,
+    transparent 100%
+  );
+  /* Sombra interna simulada com filter */
+  filter: drop-shadow(0 8px 30px rgba(0,0,0,0.08));
+  /* Imagem maior */
+  transform: scale(1.1);
+}
+
+.hero-project-container:hover .hero-project-img {
+  transform: scale(1.15);
+}
+
+/* Efeito alternativo com gradiente nas bordas */
+.hero-project-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 100% 100% at center,
+    transparent 55%,
+    var(--paper) 95%
+  );
+  opacity: 0.6;
+}
+
+/* ================================
+   Foto da Karina (Seção Sobre) - Efeito Fade
+   ================================ */
+.about-photo-card {
+  background: transparent;
+  position: relative;
+}
+
+.about-photo-container {
+  position: relative;
+  height: 400px;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .about-photo-container {
+    height: 480px;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-photo-container {
+    height: 550px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-photo-container {
+    height: 600px;
+  }
+}
+
+.about-photo-img {
+  border-radius: 2rem;
+  object-position: center 20%;
+  /* Máscara radial para fade nas bordas - mais ampla */
+  -webkit-mask-image: radial-gradient(
+    ellipse 100% 95% at center 45%,
+    black 60%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 100% 95% at center 45%,
+    black 60%,
+    transparent 100%
+  );
+  filter: drop-shadow(0 8px 30px rgba(0,0,0,0.1));
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-photo-container:hover .about-photo-img {
+  transform: scale(1.02);
+}
+
+/* Overlay gradiente para reforçar o fade */
+.about-photo-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 100% 100% at center 45%,
+    transparent 50%,
+    var(--paper) 95%
+  );
+  opacity: 0.4;
+}
+
+/* Info text abaixo da foto */
+.about-photo-info {
+  background: linear-gradient(to bottom, transparent, rgba(246, 241, 234, 0.95));
+  position: relative;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem !important;
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+/* ================================
+   Seções - Transições suaves
+   ================================ */
+section {
+  position: relative;
+}
+
+/* Divisor elegante entre seções */
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 600px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent);
+}
+
+section:first-of-type::before {
+  display: none;
+}
+
+/* ================================
+   Elementos interativos
+   ================================ */
+/* Inputs e selects com animação */
+input, select, textarea {
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  transform: scale(1.01);
+  border-color: var(--accent) !important;
+}
+
+/* Botões de filtro */
+.filterBtn {
+  position: relative;
+  overflow: hidden;
+}
+
+.filterBtn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(227,107,44,0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.filterBtn:hover::before {
+  width: 200%;
+  height: 200%;
+}
+
+/* ================================
+   Animações customizadas
+   ================================ */
+/* Pulso suave para CTAs */
+@keyframes pulse-soft {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(227, 107, 44, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(227, 107, 44, 0);
+  }
+}
+
+.btn-accent:not(:hover) {
+  animation: pulse-soft 3s infinite;
+}
+
+/* Flutuação suave */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ================================
+   Quotes / Depoimentos
+   ================================ */
+figure.card-hover {
+  position: relative;
+}
+
+figure.card-hover blockquote::before {
+  content: '"';
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  font-size: 4rem;
+  font-family: "Playfair Display", serif;
+  color: var(--accent);
+  opacity: 0.15;
+  line-height: 1;
+  transition: opacity 0.3s ease;
+}
+
+figure.card-hover:hover blockquote::before {
+  opacity: 0.3;
+}
+
+/* ================================
+   Portfolio Items
+   ================================ */
+.portfolioItem {
+  position: relative;
+  cursor: pointer;
+}
+
+.portfolioItem::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.portfolioItem:hover::before {
+  opacity: 1;
+}
+
+/* ================================
+   Scroll suave para âncoras
+   ================================ */
+[href^="#"] {
+  scroll-behavior: smooth;
+}
+
+/* ================================
+   Loading state
+   ================================ */
+.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* ================================
+   AOS Customizações
+   ================================ */
+[data-aos] {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+

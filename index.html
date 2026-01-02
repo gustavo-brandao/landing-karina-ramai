@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karina Ramai • Arquitetura</title>
+  <meta name="description" content="Landing page moderna para arquiteta Karina Ramai. Projetos autorais, interiores e acompanhamento de obra." />
+
+  <!--
+    Tailwind via CDN
+    - Ideal para landing page rápida.
+    - Se o projeto crescer: migre para build (Vite + Tailwind) com purge e components.
+  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts (mood: elegante + assinatura) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Allura&display=swap" rel="stylesheet">
+
+  <!-- CSS customizado -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- AOS - Animate On Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script>
+    // Tailwind config leve (opcional)
+    tailwind.config = {
+      theme: {
+        extend: {
+          boxShadow: {
+            soft: "0 18px 60px rgba(0,0,0,.12)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="min-h-screen">
+
+  <!-- ======= Header / Navbar ======= -->
+  <header class="sticky top-0 z-50">
+    <div class="paper-texture border-b border-black/5 bg-white/70">
+      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        <!-- Logo/Marca -->
+        <a href="#top" class="flex items-baseline gap-1">
+          <span class="font-signature text-3xl leading-none" style="color: var(--accent);">
+            Karina
+          </span>
+          <span class="font-signature text-3xl leading-none" style="color: var(--taupe);">
+            Ramai
+          </span>
+        </a>
+
+        <!-- Nav (desktop) -->
+        <nav class="hidden md:flex items-center gap-2 lg:gap-4 text-base">
+          <a class="nav-link" href="#servicos">Serviços</a>
+          <a class="nav-link" href="#portfolio">Portfólio</a>
+          <a class="nav-link" href="#sobre">Sobre</a>
+          <a class="nav-link" href="#processo">Processo</a>
+          <a class="nav-link" href="#contato">Contato</a>
+          <a class="btn-accent rounded-full px-5 py-2.5 text-sm font-semibold shadow-soft ml-2 transition-all duration-300 hover:scale-105 hover:shadow-lg" href="#contato">
+            Solicitar orçamento
+          </a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-black/10 bg-white px-3 py-2">
+          <span class="text-sm font-semibold">Menu</span>
+        </button>
+      </div>
+
+      <!-- Nav (mobile) -->
+      <div id="mobileNav" class="md:hidden hidden border-t border-black/5 bg-white/95 backdrop-blur-sm">
+        <div class="mx-auto max-w-6xl px-4 py-5 grid gap-2 text-base">
+          <a class="mobile-link" href="#servicos">Serviços</a>
+          <a class="mobile-link" href="#portfolio">Portfólio</a>
+          <a class="mobile-link" href="#sobre">Sobre</a>
+          <a class="mobile-link" href="#processo">Processo</a>
+          <a class="mobile-link" href="#contato">Contato</a>
+          <a class="btn-accent rounded-xl px-5 py-3.5 text-base font-semibold text-center mt-2 transition-all duration-300 hover:scale-[1.02]" href="#contato">
+            Solicitar orçamento
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======= Hero ======= -->
+  <main id="top">
+    <section class="paper-texture">
+      <div class="mx-auto max-w-6xl px-4 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+
+        <!-- Texto -->
+        <div>
+          <p data-aos="fade-down" data-aos-delay="100" class="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide">
+            <span class="inline-block h-2 w-2 rounded-full" style="background: var(--accent);"></span>
+            Arquitetura • Interiores • Acompanhamento de obra
+          </p>
+
+          <h1 data-aos="fade-up" data-aos-delay="200" class="mt-5 font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
+            Projetos elegantes, funcionais e com
+            <span class="block sm:inline" style="color: var(--accent);">identidade</span>.
+          </h1>
+
+          <p data-aos="fade-up" data-aos-delay="300" class="mt-5 text-base sm:text-lg md:text-xl text-black/70 leading-relaxed">
+            Transforme sua casa, apartamento ou espaço comercial em um ambiente que une estética,
+            conforto e praticidade — do conceito ao detalhamento.
+          </p>
+
+          <div data-aos="fade-up" data-aos-delay="400" class="mt-7 flex flex-col sm:flex-row gap-3">
+            <a href="#portfolio" class="btn-accent rounded-2xl px-6 py-3 font-semibold shadow-soft text-center">
+              Ver portfólio
+            </a>
+            <a href="#contato" class="rounded-2xl px-6 py-3 font-semibold border border-black/10 bg-white/70 hover:bg-white text-center">
+              Falar no WhatsApp
+            </a>
+          </div>
+
+          <!-- “Provas rápidas” -->
+          <div data-aos="fade-up" data-aos-delay="500" class="mt-10 grid grid-cols-3 gap-4">
+            <div class="rounded-2xl border border-black/10 bg-white/70 p-4">
+              <div class="text-2xl font-bold" style="color: var(--graphite);">+50</div>
+              <div class="text-xs text-black/60">Projetos</div>
+            </div>
+            <div class="rounded-2xl border border-black/10 bg-white/70 p-4">
+              <div class="text-2xl font-bold" style="color: var(--graphite);">3D</div>
+              <div class="text-xs text-black/60">Imagens realistas</div>
+            </div>
+            <div class="rounded-2xl border border-black/10 bg-white/70 p-4">
+              <div class="text-2xl font-bold" style="color: var(--graphite);">OK</div>
+              <div class="text-xs text-black/60">Acompanhamento</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="relative" data-aos="fade-left" data-aos-delay="300" data-aos-duration="800">
+          <!-- Card principal -->
+          <div class="rounded-3xl border border-black/10 bg-white/70 shadow-soft overflow-hidden transition-all duration-300 hover:shadow-2xl">
+            <!-- Imagem do projeto: mostra completa sem cortar (letterbox) -->
+            <div class="img-container hero-project-container w-full h-56 sm:h-64 md:h-80 lg:h-96 flex items-center justify-center">
+              <img
+                src="images/projeto.png"
+                alt="Projeto em destaque"
+                class="hero-project-img w-full h-full object-contain"
+                onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22700%22><rect width=%221200%22 height=%22700%22 fill=%22%23f6f1ea%22/><text x=%2250%22 y=%22350%22 font-size=%2248%22 fill=%22%236b6258%22 font-family=%22Arial%22>images/projeto.png não encontrada</text></svg>';"
+              />
+            </div>
+            <div class="p-5 sm:p-6">
+              <p class="font-serif text-lg sm:text-xl md:text-2xl">Design com essência e proporção.</p>
+              <p class="mt-2 text-sm sm:text-base text-black/65 leading-relaxed">
+                Materiais naturais, paleta atemporal e um toque de assinatura em cada detalhe.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= Serviços ======= -->
+    <section id="servicos" class="py-16 md:py-20">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="flex items-end justify-between gap-6 flex-wrap">
+          <div data-aos="fade-right">
+            <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Serviços</h2>
+            <p class="mt-3 text-base sm:text-lg text-black/65 max-w-2xl leading-relaxed">
+              Soluções completas, do estudo inicial ao detalhamento executivo — com clareza, estética e planejamento.
+            </p>
+          </div>
+          <a href="#contato" class="text-sm font-semibold underline decoration-black/20 hover:decoration-black/50">
+            Receber proposta →
+          </a>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-6">
+          <!-- Card -->
+          <article data-aos="fade-up" data-aos-delay="100" class="rounded-3xl border border-black/10 bg-white/70 p-6 sm:p-8 shadow-soft card-hover">
+            <div class="h-12 w-12 rounded-2xl flex items-center justify-center" style="background: rgba(227,107,44,.12);">
+              <span class="text-xl">▦</span>
+            </div>
+            <h3 class="mt-4 font-serif text-xl sm:text-2xl">Arquitetura Residencial</h3>
+            <p class="mt-3 text-sm sm:text-base text-black/65 leading-relaxed">
+              Estudo de layout, volumetria, fachada, materiais e soluções funcionais para a rotina.
+            </p>
+            <ul class="mt-4 text-sm sm:text-base text-black/70 grid gap-2">
+              <li>• Estudo preliminar e anteprojeto</li>
+              <li>• Projeto legal (quando aplicável)</li>
+              <li>• Projeto executivo</li>
+            </ul>
+          </article>
+
+          <article data-aos="fade-up" data-aos-delay="200" class="rounded-3xl border border-black/10 bg-white/70 p-7 shadow-soft card-hover">
+            <div class="h-10 w-10 rounded-2xl flex items-center justify-center" style="background: rgba(227,107,44,.12);">
+              <span class="text-lg">◼︎</span>
+            </div>
+            <h3 class="mt-4 font-serif text-xl">Interiores</h3>
+            <p class="mt-2 text-sm text-black/65 leading-relaxed">
+              Moodboard, 3D, marcenaria, iluminação e especificações — com estética atemporal e aconchego.
+            </p>
+            <ul class="mt-4 text-sm text-black/70 grid gap-2">
+              <li>• Layout e fluxo</li>
+              <li>• Projeto luminotécnico</li>
+              <li>• Detalhamento de marcenaria</li>
+            </ul>
+          </article>
+
+          <article data-aos="fade-up" data-aos-delay="300" class="rounded-3xl border border-black/10 bg-white/70 p-7 shadow-soft card-hover">
+            <div class="h-10 w-10 rounded-2xl flex items-center justify-center" style="background: rgba(227,107,44,.12);">
+              <span class="text-lg">✓</span>
+            </div>
+            <h3 class="mt-4 font-serif text-xl">Acompanhamento de Obra</h3>
+            <p class="mt-2 text-sm text-black/65 leading-relaxed">
+              Apoio técnico e estético para garantir execução alinhada ao projeto, prazos e qualidade final.
+            </p>
+            <ul class="mt-4 text-sm text-black/70 grid gap-2">
+              <li>• Visitas e checklist</li>
+              <li>• Suporte a fornecedores</li>
+              <li>• Ajustes finos em obra</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Portfólio ======= -->
+    <section id="portfolio" class="py-16 md:py-20 paper-texture">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="flex items-end justify-between gap-6 flex-wrap">
+          <div data-aos="fade-right">
+            <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Portfólio</h2>
+            <p class="mt-3 text-base sm:text-lg text-black/65 max-w-2xl leading-relaxed">
+              Alguns projetos selecionados. Clique para ampliar.
+            </p>
+          </div>
+
+          <!-- Filtro simples (padrão comum em sites de arquitetos) -->
+          <div data-aos="fade-left" class="flex flex-wrap items-center gap-2 text-sm sm:text-base">
+            <button class="filterBtn rounded-full border border-black/10 bg-white/70 px-4 sm:px-5 py-2 sm:py-2.5 font-semibold transition-all duration-300 hover:border-[var(--accent)] hover:text-[var(--accent)]" data-filter="all">Todos</button>
+            <button class="filterBtn rounded-full border border-black/10 bg-white/70 px-4 sm:px-5 py-2 sm:py-2.5 font-semibold transition-all duration-300 hover:border-[var(--accent)] hover:text-[var(--accent)]" data-filter="residencial">Residencial</button>
+            <button class="filterBtn rounded-full border border-black/10 bg-white/70 px-4 sm:px-5 py-2 sm:py-2.5 font-semibold transition-all duration-300 hover:border-[var(--accent)] hover:text-[var(--accent)]" data-filter="interiores">Interiores</button>
+          </div>
+        </div>
+
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Item -->
+          <button data-aos="zoom-in" data-aos-delay="100" class="portfolioItem text-left rounded-3xl overflow-hidden border border-black/10 bg-white/70 shadow-soft card-hover"
+                  data-category="residencial"
+                  data-title="Residência • Fachada contemporânea"
+                  data-image="assets/portfolio-1.jpg">
+            <img class="h-52 w-full object-cover"
+                 src="assets/portfolio-1.jpg"
+                 alt="Projeto 1"
+                 onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22700%22><rect width=%221200%22 height=%22700%22 fill=%22%23cfc6b3%22/><text x=%2250%22 y=%22350%22 font-size=%2246%22 fill=%22%231f1f1f%22 font-family=%22Arial%22>assets/portfolio-1.jpg</text></svg>';"
+            />
+            <div class="p-5">
+              <p class="font-serif text-lg">Residência • Fachada</p>
+              <p class="text-sm text-black/60">Linhas leves + materiais naturais</p>
+            </div>
+          </button>
+
+          <button data-aos="zoom-in" data-aos-delay="200" class="portfolioItem text-left rounded-3xl overflow-hidden border border-black/10 bg-white/70 shadow-soft card-hover"
+                  data-category="interiores"
+                  data-title="Interiores • Sala integrada"
+                  data-image="assets/portfolio-2.jpg">
+            <img class="h-52 w-full object-cover"
+                 src="assets/portfolio-2.jpg" alt="Projeto 2"
+                 onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22700%22><rect width=%221200%22 height=%22700%22 fill=%22%23f6f1ea%22/><text x=%2250%22 y=%22350%22 font-size=%2246%22 fill=%22%236b6258%22 font-family=%22Arial%22>assets/portfolio-2.jpg</text></svg>';"
+            />
+            <div class="p-5">
+              <p class="font-serif text-lg">Interiores • Sala</p>
+              <p class="text-sm text-black/60">Conforto e proporção</p>
+            </div>
+          </button>
+
+          <button data-aos="zoom-in" data-aos-delay="300" class="portfolioItem text-left rounded-3xl overflow-hidden border border-black/10 bg-white/70 shadow-soft card-hover"
+                  data-category="interiores"
+                  data-title="Interiores • Cozinha e marcenaria"
+                  data-image="assets/portfolio-3.jpg">
+            <img class="h-52 w-full object-cover"
+                 src="assets/portfolio-3.jpg" alt="Projeto 3"
+                 onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22700%22><rect width=%221200%22 height=%22700%22 fill=%22%23efe8dd%22/><text x=%2250%22 y=%22350%22 font-size=%2246%22 fill=%22%231f1f1f%22 font-family=%22Arial%22>assets/portfolio-3.jpg</text></svg>';"
+            />
+            <div class="p-5">
+              <p class="font-serif text-lg">Cozinha • Marcenaria</p>
+              <p class="text-sm text-black/60">Detalhe e funcionalidade</p>
+            </div>
+          </button>
+
+          <!-- Adicione mais cards copiando os blocos acima -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Sobre ======= -->
+    <section id="sobre" class="py-16 md:py-20">
+      <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right" data-aos-duration="800">
+          <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Sobre a Karina</h2>
+          <p class="mt-5 text-base sm:text-lg text-black/70 leading-relaxed">
+            Karina Ramai é arquiteta com oito anos de atuação no mercado, desenvolvendo projetos que aliam funcionalidade, estética e coerência técnica. Sua abordagem é pautada na compreensão aprofundada das necessidades de cada cliente, buscando traduzir expectativas e estilo de vida em soluções arquitetônicas bem planejadas e executáveis.
+          </p>
+          <p class="mt-4 text-base sm:text-lg text-black/70 leading-relaxed">
+            Ao longo de sua trajetória, consolidou experiência em modelagem tridimensional e renderização realista, ferramentas que utiliza para comunicar com clareza cada etapa do projeto. A identidade do escritório se reflete no uso criterioso de materiais, em paletas equilibradas e em uma linguagem autoral consistente, presente tanto no conceito quanto nos detalhes finais.
+          </p>
+
+          <div class="mt-7 flex gap-3">
+            <a href="#contato" class="btn-accent rounded-2xl px-6 py-3 font-semibold shadow-soft">
+              Agendar conversa
+            </a>
+            <a href="#processo" class="rounded-2xl px-6 py-3 font-semibold border border-black/10 bg-white/70 hover:bg-white">
+              Ver processo
+            </a>
+          </div>
+        </div>
+
+        <!-- Visual: foto da arquiteta com efeito fade -->
+        <div data-aos="fade-left" data-aos-duration="800" class="about-photo-card rounded-3xl overflow-hidden transition-all duration-300">
+          <div class="about-photo-container w-full flex items-center justify-center">
+            <img src="images/karina_ramai.png" alt="Karina Ramai" class="about-photo-img w-full h-full object-cover" onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22700%22><rect width=%221200%22 height=%22700%22 fill=%22%23f6f1ea%22/><text x=%2250%22 y=%22350%22 font-size=%2248%22 fill=%22%236b6258%22 font-family=%22Arial%22>images/karina_ramai.png não encontrada</text></svg>';" />
+          </div>
+
+          <div class="about-photo-info p-5 sm:p-6">
+            <p class="font-signature text-2xl sm:text-3xl" style="color: var(--accent);">Karina Ramai</p>
+            <p class="mt-1 text-sm sm:text-base text-black/60 tracking-widest">Arquiteta</p>
+            <p class="mt-3 text-sm sm:text-base text-black/65 leading-relaxed">Atua em projetos residenciais e interiores com foco em materiais naturais e soluções funcionais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Processo ======= -->
+    <section id="processo" class="py-16 md:py-20 paper-texture">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 data-aos="fade-up" class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Como funciona</h2>
+        <p data-aos="fade-up" data-aos-delay="100" class="mt-3 text-base sm:text-lg text-black/65 max-w-2xl leading-relaxed">
+          Um processo claro reduz dúvidas, evita retrabalho e garante uma entrega fiel ao conceito.
+        </p>
+
+        <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div data-aos="fade-up" data-aos-delay="100" class="rounded-3xl border border-black/10 bg-white/70 p-5 sm:p-6 shadow-soft card-hover">
+            <div class="text-xs sm:text-sm font-bold tracking-widest text-black/50">ETAPA 01</div>
+            <div class="mt-2 font-serif text-base sm:text-lg md:text-xl">Briefing</div>
+            <p class="mt-2 text-sm sm:text-base text-black/65 leading-relaxed">Entendimento do estilo, necessidades, rotina e orçamento.</p>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="200" class="rounded-3xl border border-black/10 bg-white/70 p-6 shadow-soft card-hover">
+            <div class="text-xs font-bold tracking-widest text-black/50">ETAPA 02</div>
+            <div class="mt-2 font-serif text-lg">Conceito + Layout</div>
+            <p class="mt-2 text-sm text-black/65">Moodboard, referências e estudo do melhor fluxo do espaço.</p>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="300" class="rounded-3xl border border-black/10 bg-white/70 p-6 shadow-soft card-hover">
+            <div class="text-xs font-bold tracking-widest text-black/50">ETAPA 03</div>
+            <div class="mt-2 font-serif text-lg">3D + Detalhes</div>
+            <p class="mt-2 text-sm text-black/65">Imagens, marcenaria, iluminação e especificações.</p>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="400" class="rounded-3xl border border-black/10 bg-white/70 p-6 shadow-soft card-hover">
+            <div class="text-xs font-bold tracking-widest text-black/50">ETAPA 04</div>
+            <div class="mt-2 font-serif text-lg">Entrega / Obra</div>
+            <p class="mt-2 text-sm text-black/65">Documentação final e suporte para execução (opcional).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Na Mídia ======= -->
+    <section class="py-16 md:py-20">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="flex items-end justify-between gap-6 flex-wrap">
+          <div data-aos="fade-right">
+            <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Na Mídia</h2>
+            <p class="mt-3 text-base sm:text-lg text-black/65 leading-relaxed">Karina Ramai em destaque na imprensa.</p>
+          </div>
+        </div>
+
+        <div class="mt-10">
+          <a data-aos="fade-up" data-aos-duration="800" href="https://www.campograndenews.com.br/conteudo-patrocinado/leroy-merlin/e-possivel-transformar-a-casa-so-trocando-o-piso-e-sem-dor-de-cabeca" target="_blank" rel="noopener noreferrer" class="block rounded-3xl border border-black/10 bg-white/70 p-6 sm:p-8 shadow-soft card-hover transition-all duration-300 hover:border-[var(--accent)]">
+            <div class="flex flex-col md:flex-row gap-6 items-start">
+              <div class="flex-shrink-0 h-14 w-14 rounded-2xl flex items-center justify-center" style="background: rgba(227,107,44,.12);">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent);">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <p class="text-xs sm:text-sm font-bold tracking-widest text-black/50 uppercase">Campo Grande News</p>
+                <h3 class="mt-2 font-serif text-lg sm:text-xl md:text-2xl leading-snug">É possível transformar a casa só trocando o piso e sem dor de cabeça</h3>
+                <p class="mt-3 text-sm sm:text-base text-black/65 leading-relaxed">Karina Ramai compartilha dicas e soluções práticas para renovar ambientes de forma simples e eficiente.</p>
+                <p class="mt-4 text-sm font-semibold inline-flex items-center gap-2 transition-all duration-300" style="color: var(--accent);">
+                  Ler matéria completa
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Depoimentos (placeholder comum) ======= -->
+    <section class="py-16 md:py-20 paper-texture">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="flex items-end justify-between gap-6 flex-wrap">
+          <div data-aos="fade-right">
+            <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Depoimentos</h2>
+            <p class="mt-3 text-base sm:text-lg text-black/65 leading-relaxed">Substitua por depoimentos reais quando tiver.</p>
+          </div>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-6">
+          <figure data-aos="fade-up" data-aos-delay="100" class="rounded-3xl border border-black/10 bg-white/70 p-7 shadow-soft card-hover">
+            <blockquote class="text-sm text-black/70 leading-relaxed">
+              "A Karina entendeu perfeitamente o que a gente queria e trouxe soluções que não tínhamos imaginado."
+            </blockquote>
+            <figcaption class="mt-4 text-sm font-semibold">Cliente • Residencial</figcaption>
+          </figure>
+
+          <figure data-aos="fade-up" data-aos-delay="200" class="rounded-3xl border border-black/10 bg-white/70 p-7 shadow-soft card-hover">
+            <blockquote class="text-sm text-black/70 leading-relaxed">
+              "Processo organizado e detalhado. A obra ficou muito mais tranquila com as orientações do projeto."
+            </blockquote>
+            <figcaption class="mt-4 text-sm font-semibold">Cliente • Interiores</figcaption>
+          </figure>
+
+          <figure data-aos="fade-up" data-aos-delay="300" class="rounded-3xl border border-black/10 bg-white/70 p-7 shadow-soft card-hover">
+            <blockquote class="text-sm text-black/70 leading-relaxed">
+              “O resultado final ficou sofisticado e aconchegante — exatamente como imaginávamos.”
+            </blockquote>
+            <figcaption class="mt-4 text-sm font-semibold">Cliente • Apartamento</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Contato ======= -->
+    <section id="contato" class="py-16 md:py-20 paper-texture">
+      <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-start">
+
+        <div data-aos="fade-right" data-aos-duration="800">
+          <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Vamos conversar</h2>
+          <p class="mt-3 text-base sm:text-lg text-black/65 leading-relaxed max-w-xl">
+            Envie uma mensagem com o tipo de projeto, cidade e uma breve ideia do que você precisa.
+            Retorno em até 1 dia útil.
+          </p>
+
+          <div class="mt-8 grid gap-3">
+            <div class="rounded-2xl border border-black/10 bg-white/70 p-4">
+              <div class="text-xs font-bold tracking-widest text-black/50">WHATSAPP</div>
+              <div class="mt-1 font-semibold">(67) 99238-3740</div>
+              <div class="text-sm text-black/60">Clique no botão ao lado para iniciar.</div>
+            </div>
+
+            <div class="rounded-2xl border border-black/10 bg-white/70 p-4">
+              <div class="text-xs font-bold tracking-widest text-black/50">E-MAIL</div>
+              <div class="mt-1 font-semibold">karinaramai@outlook.com</div>
+              <div class="text-sm text-black/60">Troque pelos contatos reais.</div>
+            </div>
+          </div>
+
+          <a id="whatsBtn"
+             class="mt-6 inline-flex items-center justify-center btn-accent rounded-2xl px-6 py-3 font-semibold shadow-soft w-full sm:w-auto"
+             href="#"
+             aria-label="Falar no WhatsApp">
+            Falar no WhatsApp
+          </a>
+
+          <p class="mt-4 text-xs text-black/55">
+            Dica: se você já tiver um link/QR Code, coloque também na seção (como no cartão de visitas).
+          </p>
+        </div>
+
+        <!-- Form -->
+        <div data-aos="fade-left" data-aos-duration="800" class="rounded-3xl border border-black/10 bg-white/70 shadow-soft p-7">
+          <h3 class="font-serif text-2xl">Solicitar orçamento</h3>
+          <p class="mt-1 text-sm text-black/65">Formulário simples (troque para integração real depois).</p>
+
+          <form id="leadForm" class="mt-6 grid gap-4" novalidate>
+            <div>
+              <label class="text-sm font-semibold">Nome</label>
+              <input class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 ring-accent"
+                     type="text" name="nome" placeholder="Seu nome" required />
+              <p class="mt-1 text-xs text-red-600 hidden" data-error="nome">Informe seu nome.</p>
+            </div>
+
+            <div>
+              <label class="text-sm font-semibold">WhatsApp</label>
+              <input class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 ring-accent"
+                     type="tel" name="whatsapp" placeholder="(DDD) 9 xxxx-xxxx" required />
+              <p class="mt-1 text-xs text-red-600 hidden" data-error="whatsapp">Informe um WhatsApp válido.</p>
+            </div>
+
+            <div>
+              <label class="text-sm font-semibold">Tipo de projeto</label>
+              <select class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 ring-accent"
+                      name="tipo" required>
+                <option value="">Selecione…</option>
+                <option>Arquitetura residencial</option>
+                <option>Interiores</option>
+                <option>Comercial</option>
+                <option>Consultoria</option>
+              </select>
+              <p class="mt-1 text-xs text-red-600 hidden" data-error="tipo">Selecione um tipo.</p>
+            </div>
+
+            <div>
+              <label class="text-sm font-semibold">Mensagem</label>
+              <textarea class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 ring-accent"
+                        name="mensagem" rows="4" placeholder="Conte um pouco sobre seu projeto" required></textarea>
+              <p class="mt-1 text-xs text-red-600 hidden" data-error="mensagem">Escreva uma mensagem.</p>
+            </div>
+
+            <button class="btn-accent rounded-2xl px-6 py-3 font-semibold shadow-soft">
+              Enviar
+            </button>
+
+            <p id="formSuccess" class="text-sm font-semibold hidden" style="color: var(--accent);">
+              Mensagem pronta! Abrindo WhatsApp…
+            </p>
+
+            <p class="text-xs text-black/55">
+              *Este formulário monta a mensagem e abre o WhatsApp. Para envio real por e-mail/CRM, integre com API.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= Footer ======= -->
+    <footer class="border-t border-black/5 bg-white/50 paper-texture">
+      <div class="mx-auto max-w-6xl px-4 py-10">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <div class="flex items-baseline gap-1">
+              <span class="font-signature text-3xl leading-none" style="color: var(--accent);">Karina</span>
+              <span class="font-signature text-3xl leading-none" style="color: var(--taupe);">Ramai</span>
+            </div>
+            <p class="mt-2 text-sm text-black/60">Arquitetura • Interiores • Acompanhamento</p>
+            
+            <!-- Redes Sociais -->
+            <div class="mt-4 flex items-center gap-3">
+              <a href="https://www.instagram.com/arq.karinaramai/" target="_blank" rel="noopener noreferrer" class="h-10 w-10 rounded-full border border-black/10 bg-white/70 flex items-center justify-center transition-all duration-300 hover:border-[var(--accent)] hover:bg-[rgba(227,107,44,.1)] hover:scale-110" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24" style="color: var(--accent);">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a href="https://br.linkedin.com/in/karina-ramai-1385b3177" target="_blank" rel="noopener noreferrer" class="h-10 w-10 rounded-full border border-black/10 bg-white/70 flex items-center justify-center transition-all duration-300 hover:border-[var(--accent)] hover:bg-[rgba(227,107,44,.1)] hover:scale-110" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24" style="color: var(--taupe);">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="text-sm text-black/60 text-left md:text-right">
+            <p>© <span id="year"></span> Karina Ramai. Todos os direitos reservados.</p>
+            <p class="mt-1">Desenvolvido com Tailwind + boas práticas de UI.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ======= Modal Portfólio (Lightbox) ======= -->
+  <div id="modal" class="fixed inset-0 hidden items-center justify-center p-4 z-[60]">
+    <div class="modal-backdrop absolute inset-0"></div>
+
+    <div class="relative w-full max-w-4xl rounded-3xl overflow-hidden border border-white/10 shadow-soft bg-black">
+      <button id="modalClose"
+              class="absolute top-3 right-3 z-10 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold hover:bg-white">
+        Fechar
+      </button>
+
+      <img id="modalImg" src="" alt="" class="w-full max-h-[80vh] object-contain bg-black" />
+      <div class="p-5 bg-white">
+        <p id="modalTitle" class="font-serif text-xl"></p>
+        <p class="text-sm text-black/60">Troque por descrição do projeto (materiais, conceito, metragem, etc.).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AOS - Animate On Scroll -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- JavaScript principal -->
+  <script src="js/main.js"></script>
+</body>
+</html>
