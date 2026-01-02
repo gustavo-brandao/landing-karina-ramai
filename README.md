@@ -18,3 +18,19 @@ O projeto foi pensado para ser leve, responsivo e de fácil manutenção, ideal 
 
 ## 📂 Estrutura do projeto
 
+/
+├── index.html
+├── Imagens/
+│ └── carina__ramai.png
+├── assets/
+└── js/
+
+## Características
+
+- Layout responsivo (desktop e mobile)
+- Identidade visual alinhada à marca
+- Seções institucionais e portfólio
+- Animações suaves e não invasivas
+- Código simples e organizado
+
+---
