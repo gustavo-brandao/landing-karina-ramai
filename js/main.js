@@ -372,3 +372,50 @@ window.addEventListener("resize", () => {
     AOS.refresh();
   }, 250);
 }, { passive: true });
+
+// =========================
+// Cookie Consent Banner
+// =========================
+const cookieBanner = $("#cookieBanner");
+const acceptCookiesBtn = $("#acceptCookies");
+
+function showCookieBanner() {
+  if (cookieBanner) {
+    // Pequeno delay para garantir que a animação funcione
+    setTimeout(() => {
+      cookieBanner.classList.add("show");
+    }, 500);
+  }
+}
+
+function hideCookieBanner() {
+  if (cookieBanner) {
+    cookieBanner.classList.add("hiding");
+    cookieBanner.classList.remove("show");
+    setTimeout(() => {
+      cookieBanner.style.display = "none";
+    }, 400);
+  }
+}
+
+function acceptCookies() {
+  localStorage.setItem("cookieConsent", "accepted");
+  hideCookieBanner();
+  
+  // Carregar Google Analytics após aceitar
+  if (typeof loadGoogleAnalytics === "function") {
+    loadGoogleAnalytics();
+  }
+}
+
+// Verificar se já aceitou cookies
+if (localStorage.getItem("cookieConsent") !== "accepted") {
+  showCookieBanner();
+} else {
+  // Esconder banner se já aceitou
+  if (cookieBanner) {
+    cookieBanner.style.display = "none";
+  }
+}
+
+acceptCookiesBtn?.addEventListener("click", acceptCookies);
