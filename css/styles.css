@@ -470,6 +470,24 @@ html, body {
   }
 }
 
+/* Ajustes para smartphones médios */
+@media (max-width: 480px) {
+  /* Stats/badges do hero - texto responsivo */
+  .grid-cols-3 .text-xs {
+    font-size: 0.7rem;
+    line-height: 1.35;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  
+  .grid-cols-3 > div {
+    padding: 0.875rem 0.5rem;
+    min-width: 0; /* Permite que o flex/grid encolha o item */
+  }
+}
+
 /* Ajustes específicos para smartphones pequenos */
 @media (max-width: 375px) {
   html {
@@ -483,10 +501,21 @@ html, body {
   /* Stats no hero mais compactos */
   .grid-cols-3 > div {
     padding: 0.75rem;
+    /* Garante que o texto não transborde */
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .grid-cols-3 .text-2xl {
     font-size: 1.25rem;
+  }
+  
+  /* Texto descritivo dos stats - permite quebra e reduz fonte */
+  .grid-cols-3 .text-xs {
+    font-size: 0.65rem;
+    line-height: 1.3;
+    word-break: break-word;
+    hyphens: auto;
   }
   
   /* Hero project - ainda mais espaço em telas pequenas */
