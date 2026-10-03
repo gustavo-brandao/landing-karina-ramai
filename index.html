@@ -1,729 +1,544 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR" class="no-js">
 <head>
-  <!-- Google Analytics - Carregado apenas após consentimento de cookies -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    
-    // Função para carregar o Google Analytics após consentimento
-    function loadGoogleAnalytics() {
-      if (document.getElementById('ga-script')) return; // Já carregado
-      
-      var gaScript = document.createElement('script');
-      gaScript.id = 'ga-script';
-      gaScript.async = true;
-      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-Y1X47J4Z57';
-      document.head.appendChild(gaScript);
-      
-      gaScript.onload = function() {
-        gtag('js', new Date());
-        gtag('config', 'G-Y1X47J4Z57');
-      };
-    }
-    
-    // Verifica se já aceitou cookies anteriormente
-    if (localStorage.getItem('cookieConsent') === 'accepted') {
-      loadGoogleAnalytics();
-    }
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#f6f1ea" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="msvalidate.01" content="09EEA779C83D4C43458748CEE8EEED4F" />
-  <!-- Microsoft Clarity -->
-   <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "uw3wuf04il");
-</script>
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
+
   <title>Karina Ramai Arquitetura | Projetos Autorais e Interiores</title>
   <meta name="description" content="Arquitetura que une estética e funcionalidade. Conheça o trabalho de Karina Ramai: projetos de interiores, reformas e gestão de obras com foco no seu bem-estar." />
+  <link rel="canonical" href="https://arqkarinaramai.pages.dev/" />
+  <meta name="theme-color" content="#f6f1ea" />
+  <meta name="msvalidate.01" content="09EEA779C83D4C43458748CEE8EEED4F" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-  <!--
-    Tailwind via CDN
-    - Ideal para landing page rápida.
-    - Se o projeto crescer: migre para build (Vite + Tailwind) com purge e components.
-  -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Open Graph / compartilhamento -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Karina Ramai Arquitetura" />
+  <meta property="og:title" content="Karina Ramai Arquitetura | Projetos Autorais e Interiores" />
+  <meta property="og:description" content="Projetos elegantes, funcionais e com identidade. Arquitetura residencial, interiores e acompanhamento de obra em Campo Grande, MS." />
+  <meta property="og:url" content="https://arqkarinaramai.pages.dev/" />
+  <meta property="og:image" content="https://arqkarinaramai.pages.dev/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Google Fonts (mood: elegante + assinatura) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Allura&display=swap" rel="stylesheet">
-
-  <!-- CSS customizado -->
-  <link rel="stylesheet" href="css/styles.css">
-
-  <!-- AOS - Animate On Scroll -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <script>
-    // Tailwind config leve (opcional)
-    tailwind.config = {
-      theme: {
-        extend: {
-          boxShadow: {
-            soft: "0 18px 60px rgba(0,0,0,.12)"
-          }
-        }
-      }
-    }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Karina Ramai Arquitetura",
+    "description": "Arquitetura residencial, interiores e acompanhamento de obra.",
+    "url": "https://arqkarinaramai.pages.dev/",
+    "image": "https://arqkarinaramai.pages.dev/img/og-image.jpg",
+    "telephone": "+55-67-99238-3740",
+    "email": "arqkarinaramai@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Campo Grande", "addressRegion": "MS", "addressCountry": "BR" },
+    "founder": { "@type": "Person", "name": "Karina Ramai", "jobTitle": "Arquiteta e Urbanista" },
+    "sameAs": ["https://www.instagram.com/arq.karinaramai/", "https://br.linkedin.com/in/karina-ramai-1385b3177"]
+  }
   </script>
+
+  <!-- Google Analytics — carregado somente após consentimento de cookies (ver src/js/consent.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    function loadGoogleAnalytics() {
+      if (document.getElementById("ga-script")) return;
+      var s = document.createElement("script");
+      s.id = "ga-script"; s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-Y1X47J4Z57";
+      s.onload = function () { gtag("js", new Date()); gtag("config", "G-Y1X47J4Z57"); };
+      document.head.appendChild(s);
+    }
+    try { if (localStorage.getItem("cookieConsent") === "accepted") loadGoogleAnalytics(); } catch (e) {}
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script>
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uw3wuf04il");
+  </script>
+
+  <!-- Fontes: Playfair (títulos), Plus Jakarta Sans (texto), Allura (assinatura) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Allura&display=swap" rel="stylesheet" />
+
+  <link rel="preload" as="image" href="/img/residencial_capa-960.webp" imagesrcset="/img/residencial_capa-480.webp 480w, /img/residencial_capa-960.webp 960w, /img/residencial_capa-1200.webp 1200w" imagesizes="(max-width: 900px) 80vw, 440px" />
+  <script type="module" src="/src/main.js"></script>
 </head>
 
-<body class="min-h-screen">
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- ======= Header / Navbar ======= -->
-  <header class="sticky top-0 z-50">
-    <div class="paper-texture border-b border-black/5 bg-white/70">
-      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-        <!-- Logo/Marca -->
-        <a href="#top" class="flex items-baseline gap-1">
-          <span class="font-signature text-3xl leading-none" style="color: var(--accent);">
-            Karina
-          </span>
-          <span class="font-signature text-3xl leading-none" style="color: var(--taupe);">
-            Ramai
-          </span>
-        </a>
+  <!-- ================= Header ================= -->
+  <header class="site-header" id="header">
+    <div class="wrap nav">
+      <a href="#topo" class="logo font-signature" aria-label="Karina Ramai — início">
+        <span class="logo-k">Karina</span><span class="logo-r">Ramai</span>
+      </a>
 
-        <!-- Nav (desktop) -->
-        <nav class="hidden md:flex items-center gap-2 lg:gap-4 text-base">
-          <a class="nav-link" href="#servicos">Serviços</a>
-          <a class="nav-link" href="#portfolio">Portfólio</a>
-          <a class="nav-link" href="#sobre">Sobre</a>
-          <a class="nav-link" href="#processo">Processo</a>
-          <a class="nav-link" href="#contato">Contato</a>
-          <a class="btn-accent rounded-full px-5 py-2.5 text-sm font-semibold shadow-soft ml-2 transition-all duration-300 hover:scale-105 hover:shadow-lg" href="#contato">
-            Solicitar orçamento
-          </a>
-        </nav>
+      <nav class="menu" aria-label="Principal">
+        <a href="#projetos" data-nav>Projetos</a>
+        <a href="#sobre" data-nav>A arquiteta</a>
+        <a href="#servicos" data-nav>Serviços</a>
+        <a href="#processo" data-nav>Processo</a>
+        <a href="#contato" data-nav>Contato</a>
+        <a href="#contato" class="btn-line">Orçamento</a>
+      </nav>
 
-        <!-- Mobile menu button -->
-        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-black/10 bg-white px-3 py-2">
-          <span class="text-sm font-semibold">Menu</span>
-        </button>
-      </div>
-
-      <!-- Nav (mobile) -->
-      <div id="mobileNav" class="md:hidden hidden border-t border-black/5 bg-white/95 backdrop-blur-sm">
-        <div class="mx-auto max-w-6xl px-4 py-5 grid gap-2 text-base">
-          <a class="mobile-link" href="#servicos">Serviços</a>
-          <a class="mobile-link" href="#portfolio">Portfólio</a>
-          <a class="mobile-link" href="#sobre">Sobre</a>
-          <a class="mobile-link" href="#processo">Processo</a>
-          <a class="mobile-link" href="#contato">Contato</a>
-          <a class="btn-accent rounded-xl px-5 py-3.5 text-base font-semibold text-center mt-2 transition-all duration-300 hover:scale-[1.02]" href="#contato">
-            Solicitar orçamento
-          </a>
-        </div>
-      </div>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="menu-toggle-label">Menu</span>
+        <span class="menu-toggle-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
     </div>
   </header>
 
-  <!-- ======= Hero ======= -->
-  <main id="top">
-    <section class="paper-texture">
-      <div class="mx-auto max-w-6xl px-4 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+  <!-- Menu mobile (tela cheia) -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="wrap mobile-menu-inner" aria-label="Menu">
+      <a href="#projetos"><small>01</small>Projetos</a>
+      <a href="#sobre"><small>02</small>A arquiteta</a>
+      <a href="#servicos"><small>03</small>Serviços</a>
+      <a href="#processo"><small>04</small>Processo</a>
+      <a href="#contato"><small>05</small>Contato</a>
+      <div class="mobile-menu-foot">
+        <a href="#contato" class="btn">Solicitar orçamento <span aria-hidden="true">→</span></a>
+        <p>(67) 99238-3740 · arqkarinaramai@gmail.com</p>
+      </div>
+    </nav>
+  </div>
 
-        <!-- Texto -->
+  <main id="conteudo">
+
+    <!-- ================= Hero ================= -->
+    <section class="hero wrap" id="topo">
+      <div class="hero-text">
+        <p class="eyebrow" data-reveal>Karina Ramai — Arquiteta &amp; Urbanista · Campo Grande, MS</p>
+        <h1 class="hero-title font-serif" data-reveal="lines">
+          <span class="line"><span>Projetos elegantes,</span></span>
+          <span class="line"><span>funcionais e com</span></span>
+          <span class="line"><span><em>identidade.</em></span></span>
+        </h1>
+        <p class="hero-lead" data-reveal>Transforme sua casa, apartamento ou espaço comercial em um ambiente que une estética, conforto e praticidade — do conceito ao detalhamento.</p>
+        <div class="hero-ctas" data-reveal>
+          <a href="#projetos" class="btn">Ver projetos <span aria-hidden="true">→</span></a>
+          <a href="#sobre" class="link-underline">Conheça a arquiteta</a>
+        </div>
+        <dl class="stats" data-reveal>
+          <div><dt>anos de atuação</dt><dd data-count="8">8</dd></div>
+          <div><dt>projetos entregues</dt><dd data-count="50" data-prefix="+">+50</dd></div>
+          <div><dt>imagens realistas</dt><dd>3D</dd></div>
+        </dl>
+      </div>
+
+      <figure class="hero-media">
+        <span class="hero-vtag" data-reveal>Arquitetura · Interiores · Obra</span>
+        <div class="mat" data-reveal="mask">
+          <div class="photo">
+            <img src="/img/residencial_capa-960.webp"
+                 srcset="/img/residencial_capa-480.webp 480w, /img/residencial_capa-960.webp 960w, /img/residencial_capa-1200.webp 1200w"
+                 sizes="(max-width: 900px) 80vw, 440px" width="1200" height="1600" fetchpriority="high"
+                 alt="Projeto residencial com área externa, piscina iluminada e cascata em pedra — Karina Ramai Arquitetura" />
+          </div>
+        </div>
+        <div class="hero-thumb" data-reveal="mask" style="--delay:.45s">
+          <div class="photo">
+            <img src="/img/interiores_capa-480.webp" width="1080" height="1350" sizes="200px"
+                 alt="Cozinha integrada com ilha em granito preto e painel ripado em madeira" />
+          </div>
+          <span>Interiores · Living</span>
+        </div>
+        <figcaption data-reveal><small>Projeto · Área externa</small><span class="font-signature">Karina Ramai</span></figcaption>
+      </figure>
+    </section>
+
+    <!-- ================= Marquee ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Residencial <i>✦</i></span><span>Interiores <i>✦</i></span><span>Comercial <i>✦</i></span><span>Acompanhamento de obra <i>✦</i></span><span>Projeto 3D <i>✦</i></span>
+        <span>Residencial <i>✦</i></span><span>Interiores <i>✦</i></span><span>Comercial <i>✦</i></span><span>Acompanhamento de obra <i>✦</i></span><span>Projeto 3D <i>✦</i></span>
+      </div>
+    </div>
+
+    <!-- ================= (01) Projetos ================= -->
+    <section class="section wrap" id="projetos" aria-labelledby="projetos-titulo">
+      <div class="sec-head">
+        <span class="sec-num" data-reveal>(01)</span>
+        <h2 id="projetos-titulo" class="sec-title font-serif" data-reveal>Projetos<br /><em>selecionados</em></h2>
+        <div class="filters" role="group" aria-label="Filtrar projetos" data-reveal>
+          <button class="is-active" data-filter="all" aria-pressed="true">Todos</button>
+          <button data-filter="residencial" aria-pressed="false">Residencial</button>
+          <button data-filter="interiores" aria-pressed="false">Interiores</button>
+          <button data-filter="comercial" aria-pressed="false">Comercial</button>
+        </div>
+      </div>
+
+      <div class="projects" id="projectsGrid">
+        <button class="project" data-reveal data-category="residencial" data-title="Residencial — Área Externa"
+                data-gallery='["residencial_capa","residencial1","residencial2","residencial3","residencial4","residencial5","residencial6"]'
+                aria-label="Abrir galeria: Residencial — Área Externa (7 fotos)">
+          <span class="mat" data-reveal="mask"><span class="photo">
+            <img src="/img/residencial_capa-960.webp" loading="lazy" width="1200" height="1600"
+                 srcset="/img/residencial_capa-480.webp 480w, /img/residencial_capa-960.webp 960w, /img/residencial_capa-1200.webp 1200w"
+                 sizes="(max-width: 900px) 90vw, 480px"
+                 alt="Projeto residencial com área externa integrada, espaço gourmet e piscina com paisagismo — Arquitetura Campo Grande MS" />
+            <span class="project-see">Ver projeto · 7 fotos <span aria-hidden="true">→</span></span>
+          </span></span>
+          <span class="project-meta"><span><strong>Área Externa</strong><em>Integração, lazer e valorização dos espaços</em></span><small>01 · Residencial</small></span>
+        </button>
+
+        <button class="project" data-reveal data-category="interiores" data-title="Interiores — Living & Cozinha"
+                data-gallery='["interiores_capa","interiores1","interiores2","interiores3","interiores4","interiores5"]'
+                aria-label="Abrir galeria: Interiores — Living e Cozinha (6 fotos)">
+          <span class="mat" data-reveal="mask"><span class="photo">
+            <img src="/img/interiores_capa-960.webp" loading="lazy" width="1080" height="1350"
+                 srcset="/img/interiores_capa-480.webp 480w, /img/interiores_capa-960.webp 960w, /img/interiores_capa-1080.webp 1080w"
+                 sizes="(max-width: 900px) 90vw, 360px"
+                 alt="Design de interiores com sala de estar elegante, iluminação natural e mobiliário contemporâneo — Projeto Karina Ramai" />
+            <span class="project-see">Ver projeto · 6 fotos <span aria-hidden="true">→</span></span>
+          </span></span>
+          <span class="project-meta"><span><strong>Living &amp; Cozinha</strong><em>Conforto, iluminação e funcionalidade</em></span><small>02 · Interiores</small></span>
+        </button>
+
+        <button class="project" data-reveal data-category="interiores" data-title="Interiores — Banheiro"
+                data-gallery='["banheiro_capa","banheiro1","banheiro2","banheiro3","banheiro4"]'
+                aria-label="Abrir galeria: Interiores — Banheiro (5 fotos)">
+          <span class="mat" data-reveal="mask"><span class="photo">
+            <img src="/img/banheiro_capa-900.webp" loading="lazy" width="900" height="1404"
+                 srcset="/img/banheiro_capa-480.webp 480w, /img/banheiro_capa-900.webp 900w"
+                 sizes="(max-width: 900px) 90vw, 360px"
+                 alt="Banheiro moderno com revestimentos em mármore, cuba de apoio e iluminação embutida — Design de interiores" />
+            <span class="project-see">Ver projeto · 5 fotos <span aria-hidden="true">→</span></span>
+          </span></span>
+          <span class="project-meta"><span><strong>Banheiro</strong><em>Design contemporâneo e atenção aos detalhes</em></span><small>03 · Interiores</small></span>
+        </button>
+
+        <button class="project project--wide" data-reveal data-category="comercial" data-title="Comercial — Salões de Festa"
+                data-gallery='["saloes_capa","saloes1","saloes2","saloes3","saloes4","saloes5"]'
+                aria-label="Abrir galeria: Comercial — Salões de Festa (6 fotos)">
+          <span class="mat" data-reveal="mask"><span class="photo">
+            <img src="/img/saloes_capa-960.webp" loading="lazy" width="1280" height="720"
+                 srcset="/img/saloes_capa-480.webp 480w, /img/saloes_capa-960.webp 960w, /img/saloes_capa-1280.webp 1280w"
+                 sizes="(max-width: 900px) 90vw, 620px"
+                 alt="Projeto comercial de salão de festas com área de lazer, piscina, mesa de bilhar e paisagismo com palmeiras" />
+            <span class="project-see">Ver projeto · 6 fotos <span aria-hidden="true">→</span></span>
+          </span></span>
+          <span class="project-meta"><span><strong>Salões de Festa</strong><em>Ambientes comerciais elegantes e funcionais</em></span><small>04 · Comercial</small></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= (02) A arquiteta ================= -->
+    <section class="section about" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="wrap about-grid">
+        <span class="sec-num" data-reveal>(02)</span>
+
+        <figure class="about-portrait">
+          <div class="mat" data-reveal="mask">
+            <div class="photo">
+              <img src="/img/sobre-960.webp" loading="lazy" width="1066" height="1600"
+                   srcset="/img/sobre-480.webp 480w, /img/sobre-960.webp 960w, /img/sobre-1066.webp 1066w"
+                   sizes="(max-width: 900px) 90vw, 440px"
+                   alt="Karina Ramai, arquiteta especializada em projetos residenciais e design de interiores em Campo Grande MS" />
+            </div>
+          </div>
+          <figcaption class="signature" data-reveal>
+            <span class="font-signature">Karina Ramai</span><span class="signature-bar"></span><small>Arquiteta &amp; Urbanista</small>
+          </figcaption>
+        </figure>
+
+        <div class="about-body">
+          <p class="eyebrow" data-reveal>A arquiteta</p>
+          <h2 id="sobre-titulo" class="quote font-serif" data-reveal>Cada projeto traduz o <em>estilo de vida</em> de quem vai viver nele — do conceito ao último detalhe.</h2>
+          <div class="about-text" data-reveal>
+            <p>Karina Ramai é arquiteta com oito anos de atuação no mercado, desenvolvendo projetos que aliam funcionalidade, estética e coerência técnica. Sua abordagem é pautada na compreensão aprofundada das necessidades de cada cliente, buscando traduzir expectativas e estilo de vida em soluções arquitetônicas bem planejadas e executáveis.</p>
+            <p>Ao longo de sua trajetória, consolidou experiência em modelagem tridimensional e renderização realista, ferramentas que utiliza para comunicar com clareza cada etapa do projeto. A identidade do escritório se reflete no uso criterioso de materiais, em paletas equilibradas e em uma linguagem autoral consistente, presente tanto no conceito quanto nos detalhes finais.</p>
+          </div>
+          <dl class="facts" data-reveal>
+            <div><dt>Atuação</dt><dd>8 anos</dd></div>
+            <div><dt>Especialidade</dt><dd>Residencial e interiores</dd></div>
+            <div><dt>Diferencial</dt><dd>Modelagem 3D realista</dd></div>
+            <div><dt>Base</dt><dd>Campo Grande, MS</dd></div>
+          </dl>
+          <div class="about-ctas" data-reveal>
+            <a href="#contato" class="btn">Agendar conversa <span aria-hidden="true">→</span></a>
+            <a href="#midia" class="link-underline">Karina na mídia</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= (03) Serviços ================= -->
+    <section class="section wrap" id="servicos" aria-labelledby="servicos-titulo">
+      <div class="sec-head sec-head--simple">
+        <span class="sec-num" data-reveal>(03)</span>
         <div>
-          <p data-aos="fade-down" data-aos-delay="100" class="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide">
-            <span class="inline-block h-2 w-2 rounded-full" style="background: var(--accent);"></span>
-            Arquitetura • Interiores • Acompanhamento de obra
-          </p>
-
-          <h1 data-aos="fade-up" data-aos-delay="200" class="mt-5 font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
-            Projetos elegantes, funcionais e com
-            <span class="block sm:inline" style="color: var(--accent);">identidade</span>.
-          </h1>
-
-          <p data-aos="fade-up" data-aos-delay="300" class="mt-5 text-base sm:text-lg md:text-xl text-black/70 leading-relaxed">
-            Transforme sua casa, apartamento ou espaço comercial em um ambiente que une estética,
-            conforto e praticidade — do conceito ao detalhamento.
-          </p>
-
-          <div data-aos="fade-up" data-aos-delay="400" class="mt-7 flex flex-col sm:flex-row gap-3">
-            <a href="#portfolio" class="btn-accent rounded-2xl px-6 py-3 font-semibold shadow-soft text-center">
-              Ver portfólio
-            </a>
-            <a href="#contato" class="rounded-2xl px-6 py-3 font-semibold border border-black/10 bg-white/70 hover:bg-white text-center">
-              Falar no WhatsApp
-            </a>
-          </div>
-
-          <!-- “Provas rápidas” -->
-          <div data-aos="fade-up" data-aos-delay="500" class="mt-10 grid grid-cols-3 gap-2 sm:gap-4">
-            <div class="rounded-2xl border border-black/10 bg-white/70 p-3 sm:p-4 min-w-0">
-              <div class="text-xl sm:text-2xl font-bold" style="color: var(--graphite);">+50</div>
-              <div class="text-[10px] sm:text-xs text-black/60 leading-tight">Projetos</div>
-            </div>
-            <div class="rounded-2xl border border-black/10 bg-white/70 p-3 sm:p-4 min-w-0">
-              <div class="text-xl sm:text-2xl font-bold" style="color: var(--graphite);">3D</div>
-              <div class="text-[10px] sm:text-xs text-black/60 leading-tight">Imagens realistas</div>
-            </div>
-            <div class="rounded-2xl border border-black/10 bg-white/70 p-3 sm:p-4 min-w-0">
-              <div class="text-xl sm:text-2xl font-bold" style="color: var(--graphite);">OK</div>
-              <div class="text-[10px] sm:text-xs text-black/60 leading-tight break-words">Acompanhamento</div>
-            </div>
-          </div>
+          <h2 id="servicos-titulo" class="sec-title font-serif" data-reveal>Serviços</h2>
+          <p class="sec-lead" data-reveal>Soluções completas, do estudo inicial ao detalhamento executivo — com clareza, estética e planejamento.</p>
         </div>
-
-        <!-- Visual -->
-        <div class="relative -mx-2 sm:mx-0" data-aos="fade-left" data-aos-delay="300" data-aos-duration="800">
-          <!-- Card principal -->
-          <div class="rounded-2xl sm:rounded-3xl border border-black/10 bg-white/70 shadow-soft overflow-hidden transition-all duration-300 hover:shadow-2xl">
-            <!-- Imagem do projeto: mostra completa sem cortar (letterbox) -->
-            <div class="img-container hero-project-container w-full h-64 sm:h-72 md:h-80 lg:h-96 flex items-center justify-center">
-              <img
-                src="images/projeto.png"
-                alt="Projeto arquitetônico residencial com design contemporâneo, materiais naturais e paleta de cores atemporal - Karina Ramai Arquitetura"
-                class="hero-project-img w-full h-full object-contain"
-                onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22700%22><rect width=%221200%22 height=%22700%22 fill=%22%23f6f1ea%22/><text x=%2250%22 y=%22350%22 font-size=%2248%22 fill=%22%236b6258%22 font-family=%22Arial%22>images/projeto.png não encontrada</text></svg>';"
-              />
-            </div>
-            <div class="p-4 sm:p-5 md:p-6">
-              <p class="font-serif text-lg sm:text-xl md:text-2xl">Design com essência e proporção.</p>
-              <p class="mt-2 text-sm sm:text-base text-black/65 leading-relaxed">
-                Materiais naturais, paleta atemporal e um toque de assinatura em cada detalhe.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
+        <a href="#contato" class="link-underline" data-reveal>Receber proposta →</a>
       </div>
+
+      <ol class="services">
+        <li class="service" data-reveal>
+          <span class="service-num font-serif">01</span>
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-5h4v5"/></svg>
+          </span>
+          <div class="service-main">
+            <h3 class="font-serif">Arquitetura Residencial</h3>
+            <p>Estudo de layout, volumetria, fachada, materiais e soluções funcionais para a rotina.</p>
+          </div>
+          <ul class="service-list">
+            <li>Estudo preliminar e anteprojeto</li>
+            <li>Projeto legal (quando aplicável)</li>
+            <li>Projeto executivo</li>
+          </ul>
+        </li>
+        <li class="service" data-reveal>
+          <span class="service-num font-serif">02</span>
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18v-5a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v5"/><path d="M2 18h20"/><path d="M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/><path d="M5 18v2M19 18v2"/></svg>
+          </span>
+          <div class="service-main">
+            <h3 class="font-serif">Interiores</h3>
+            <p>Moodboard, 3D, marcenaria, iluminação e especificações — com estética atemporal e aconchego.</p>
+          </div>
+          <ul class="service-list">
+            <li>Layout e fluxo</li>
+            <li>Projeto luminotécnico</li>
+            <li>Detalhamento de marcenaria</li>
+          </ul>
+        </li>
+        <li class="service" data-reveal>
+          <span class="service-num font-serif">03</span>
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6v3H9z"/><path d="M8 5.5H6a1 1 0 0 0-1 1V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6.5a1 1 0 0 0-1-1h-2"/><path d="m9 14 2 2 4-4"/></svg>
+          </span>
+          <div class="service-main">
+            <h3 class="font-serif">Acompanhamento de Obra</h3>
+            <p>Apoio técnico e estético para garantir execução alinhada ao projeto, prazos e qualidade final.</p>
+          </div>
+          <ul class="service-list">
+            <li>Visitas e checklist</li>
+            <li>Suporte a fornecedores</li>
+            <li>Ajustes finos em obra</li>
+          </ul>
+        </li>
+      </ol>
     </section>
 
-    <!-- ======= Serviços ======= -->
-    <section id="servicos" class="py-16 md:py-20">
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="flex items-end justify-between gap-6 flex-wrap">
-          <div data-aos="fade-right">
-            <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Serviços</h2>
-            <p class="mt-3 text-base sm:text-lg text-black/65 max-w-2xl leading-relaxed">
-              Soluções completas, do estudo inicial ao detalhamento executivo — com clareza, estética e planejamento.
-            </p>
-          </div>
-          <a href="#contato" class="text-sm font-semibold underline decoration-black/20 hover:decoration-black/50">
-            Receber proposta →
-          </a>
-        </div>
-
-        <div class="mt-10 grid md:grid-cols-3 gap-6">
-          <!-- Card -->
-          <article data-aos="fade-up" data-aos-delay="100" class="rounded-3xl border border-black/10 bg-white/70 p-6 sm:p-8 shadow-soft card-hover">
-            <div class="h-12 w-12 rounded-2xl flex items-center justify-center" style="background: rgba(227,107,44,.12);">
-              <span class="text-xl">▦</span>
-            </div>
-            <h3 class="mt-4 font-serif text-xl sm:text-2xl">Arquitetura Residencial</h3>
-            <p class="mt-3 text-sm sm:text-base text-black/65 leading-relaxed">
-              Estudo de layout, volumetria, fachada, materiais e soluções funcionais para a rotina.
-            </p>
-            <ul class="mt-4 text-sm sm:text-base text-black/70 grid gap-2">
-              <li>• Estudo preliminar e anteprojeto</li>
-              <li>• Projeto legal (quando aplicável)</li>
-              <li>• Projeto executivo</li>
-            </ul>
-          </article>
-
-          <article data-aos="fade-up" data-aos-delay="200" class="rounded-3xl border border-black/10 bg-white/70 p-6 sm:p-8 shadow-soft card-hover">
-            <div class="h-12 w-12 rounded-2xl flex items-center justify-center" style="background: rgba(227,107,44,.12);">
-              <span class="text-xl">◼︎</span>
-            </div>
-            <h3 class="mt-4 font-serif text-xl sm:text-2xl">Interiores</h3>
-            <p class="mt-3 text-sm sm:text-base text-black/65 leading-relaxed">
-              Moodboard, 3D, marcenaria, iluminação e especificações — com estética atemporal e aconchego.
-            </p>
-            <ul class="mt-4 text-sm sm:text-base text-black/70 grid gap-2">
-              <li>• Layout e fluxo</li>
-              <li>• Projeto luminotécnico</li>
-              <li>• Detalhamento de marcenaria</li>
-            </ul>
-          </article>
-
-          <article data-aos="fade-up" data-aos-delay="300" class="rounded-3xl border border-black/10 bg-white/70 p-6 sm:p-8 shadow-soft card-hover">
-            <div class="h-12 w-12 rounded-2xl flex items-center justify-center" style="background: rgba(227,107,44,.12);">
-              <span class="text-xl">✓</span>
-            </div>
-            <h3 class="mt-4 font-serif text-xl sm:text-2xl">Acompanhamento de Obra</h3>
-            <p class="mt-3 text-sm sm:text-base text-black/65 leading-relaxed">
-              Apoio técnico e estético para garantir execução alinhada ao projeto, prazos e qualidade final.
-            </p>
-            <ul class="mt-4 text-sm sm:text-base text-black/70 grid gap-2">
-              <li>• Visitas e checklist</li>
-              <li>• Suporte a fornecedores</li>
-              <li>• Ajustes finos em obra</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= Portfólio ======= -->
-    <section id="portfolio" class="py-16 md:py-20 paper-texture">
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="flex items-end justify-between gap-6 flex-wrap">
-          <div data-aos="fade-right">
-            <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Portfólio</h2>
-            <p class="mt-3 text-base sm:text-lg text-black/65 max-w-2xl leading-relaxed">
-              Alguns projetos selecionados. Clique para ampliar.
-            </p>
-          </div>
-
-          <!-- Filtro simples (padrão comum em sites de arquitetos) -->
-          <div data-aos="fade-left" class="flex flex-wrap items-center gap-2 text-sm sm:text-base">
-            <button class="filterBtn rounded-full border border-black/10 bg-white/70 px-4 sm:px-5 py-2 sm:py-2.5 font-semibold transition-all duration-300 hover:border-[var(--accent)] hover:text-[var(--accent)]" data-filter="all">Todos</button>
-            <button class="filterBtn rounded-full border border-black/10 bg-white/70 px-4 sm:px-5 py-2 sm:py-2.5 font-semibold transition-all duration-300 hover:border-[var(--accent)] hover:text-[var(--accent)]" data-filter="residencial">Residencial</button>
-            <button class="filterBtn rounded-full border border-black/10 bg-white/70 px-4 sm:px-5 py-2 sm:py-2.5 font-semibold transition-all duration-300 hover:border-[var(--accent)] hover:text-[var(--accent)]" data-filter="interiores">Interiores</button>
-            <button class="filterBtn rounded-full border border-black/10 bg-white/70 px-4 sm:px-5 py-2 sm:py-2.5 font-semibold transition-all duration-300 hover:border-[var(--accent)] hover:text-[var(--accent)]" data-filter="comercial">Comercial</button>
-          </div>
-        </div>
-
-        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
-          <!-- Item -->
-          <button data-aos="zoom-in" data-aos-delay="100" class="portfolioItem text-left rounded-3xl overflow-hidden border border-black/10 bg-white/70 shadow-soft card-hover"
-                  data-category="residencial"
-                  data-title="Residencial • Área Externa"
-                  data-image="assets/residencial_capa.jpeg"
-                  data-gallery='["assets/residencial_capa.jpeg","assets/residencial1.jpeg","assets/residencial2.jpeg","assets/residencial3.jpeg","assets/residencial4.jpeg","assets/residencial5.jpeg","assets/residencial6.jpeg"]'>
-            <img class="w-full object-cover" style="aspect-ratio: 10/7;"
-                 src="assets/residencial_capa.jpeg" alt="Projeto residencial com área externa integrada, espaço gourmet e piscina com paisagismo - Arquitetura Campo Grande MS"
-                 onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22700%22><rect width=%221200%22 height=%22700%22 fill=%22%23f6f1ea%22/><text x=%2250%22 y=%22350%22 font-size=%2246%22 fill=%22%236b6258%22 font-family=%22Arial%22>assets/residencial_capa.jpeg</text></svg>';"
-            />
-            <div class="p-5">
-              <p class="font-serif text-lg">Residencial • Área Externa</p>
-              <p class="text-sm text-black/60">Integração, lazer e valorização dos espaços</p>
-            </div>
-          </button>
-
-          <button data-aos="zoom-in" data-aos-delay="200" class="portfolioItem text-left rounded-3xl overflow-hidden border border-black/10 bg-white/70 shadow-soft card-hover"
-                  data-category="interiores"
-                  data-title="Interiores"
-                  data-image="assets/interiores_capa.jpeg"
-                  data-gallery='["assets/interiores_capa.jpeg","assets/interiores1.jpeg","assets/interiores2.jpeg","assets/interiores3.jpeg","assets/interiores4.jpeg","assets/interiores5.jpeg"]'>
-            <img class="w-full object-cover" style="aspect-ratio: 10/7;"
-                 src="assets/interiores_capa.jpeg"
-                 alt="Design de interiores com sala de estar elegante, iluminação natural e mobiliário contemporâneo - Projeto Karina Ramai"
-                 onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22700%22><rect width=%221200%22 height=%22700%22 fill=%22%23cfc6b3%22/><text x=%2250%22 y=%22350%22 font-size=%2246%22 fill=%22%231f1f1f%22 font-family=%22Arial%22>assets/interiores_capa.jpeg</text></svg>';"
-            />
-            <div class="p-5">
-              <p class="font-serif text-lg">Interiores</p>
-              <p class="text-sm text-black/60">Conforto, iluminação e funcionalidade para o dia a dia</p>
-            </div>
-          </button>
-
-          <button data-aos="zoom-in" data-aos-delay="300" class="portfolioItem text-left rounded-3xl overflow-hidden border border-black/10 bg-white/70 shadow-soft card-hover"
-                  data-category="interiores"
-                  data-title="Interiores • Banheiro"
-                  data-image="assets/banheiro_capa.jpeg"
-                  data-gallery='["assets/banheiro_capa.jpeg","assets/banheiro1.jpeg","assets/banheiro2.jpeg","assets/banheiro3.jpeg","assets/banheiro4.jpeg"]'>
-            <img class="w-full object-cover" style="aspect-ratio: 10/7;"
-                 src="assets/banheiro_capa.jpeg" alt="Banheiro moderno com revestimentos em mármore, box de vidro e iluminação embutida - Design de interiores"
-                 onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22700%22><rect width=%221200%22 height=%22700%22 fill=%22%23efe8dd%22/><text x=%2250%22 y=%22350%22 font-size=%2246%22 fill=%22%231f1f1f%22 font-family=%22Arial%22>assets/banheiro_capa.jpeg</text></svg>';"
-            />
-            <div class="p-5">
-              <p class="font-serif text-lg">Interiores • Banheiro</p>
-              <p class="text-sm text-black/60">Design contemporâneo e atenção aos detalhes</p>
-            </div>
-          </button>
-
-          <button data-aos="zoom-in" data-aos-delay="400" class="portfolioItem text-left rounded-3xl overflow-hidden border border-black/10 bg-white/70 shadow-soft card-hover"
-                  data-category="comercial"
-                  data-title="Comercial • Salões"
-                  data-image="assets/saloes_capa.jpeg"
-                  data-gallery='["assets/saloes_capa.jpeg","assets/saloes1.jpeg","assets/saloes2.jpeg","assets/saloes3.jpeg","assets/saloes4.jpeg","assets/saloes5.jpeg"]'>
-            <img class="w-full object-cover" style="aspect-ratio: 10/7;"
-                 src="assets/saloes_capa.jpeg" alt="Projeto comercial de salão de festas com layout funcional, iluminação cênica e acabamentos sofisticados"
-                 onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22700%22><rect width=%221200%22 height=%22700%22 fill=%22%23e8e0d4%22/><text x=%2250%22 y=%22350%22 font-size=%2246%22 fill=%22%231f1f1f%22 font-family=%22Arial%22>assets/saloes_capa.jpeg</text></svg>';"
-            />
-            <div class="p-5">
-              <p class="font-serif text-lg">Comercial • Salões</p>
-              <p class="text-sm text-black/60">Ambientes comerciais elegantes e funcionais</p>
-            </div>
-          </button>
-
-          <!-- Adicione mais cards copiando os blocos acima -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= Sobre ======= -->
-    <section id="sobre" class="py-16 md:py-20">
-      <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-center">
-        <div data-aos="fade-right" data-aos-duration="800">
-          <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Sobre a Karina</h2>
-          <p class="mt-5 text-base sm:text-lg text-black/70 leading-relaxed">
-            Karina Ramai é arquiteta com oito anos de atuação no mercado, desenvolvendo projetos que aliam funcionalidade, estética e coerência técnica. Sua abordagem é pautada na compreensão aprofundada das necessidades de cada cliente, buscando traduzir expectativas e estilo de vida em soluções arquitetônicas bem planejadas e executáveis.
-          </p>
-          <p class="mt-4 text-base sm:text-lg text-black/70 leading-relaxed">
-            Ao longo de sua trajetória, consolidou experiência em modelagem tridimensional e renderização realista, ferramentas que utiliza para comunicar com clareza cada etapa do projeto. A identidade do escritório se reflete no uso criterioso de materiais, em paletas equilibradas e em uma linguagem autoral consistente, presente tanto no conceito quanto nos detalhes finais.
-          </p>
-
-          <div class="mt-7 flex gap-3">
-            <a href="#contato" class="btn-accent rounded-2xl px-6 py-3 font-semibold shadow-soft">
-              Agendar conversa
-            </a>
-            <a href="#processo" class="rounded-2xl px-6 py-3 font-semibold border border-black/10 bg-white/70 hover:bg-white">
-              Ver processo
-            </a>
-          </div>
-        </div>
-
-        <!-- Visual: foto da arquiteta com efeito fade -->
-        <div data-aos="fade-left" data-aos-duration="800" class="about-photo-card rounded-3xl overflow-hidden transition-all duration-300">
-          <div class="about-photo-container w-full flex items-center justify-center">
-            <img src="images/sobre.jpeg" alt="Karina Ramai, arquiteta especializada em projetos residenciais e design de interiores em Campo Grande MS" class="about-photo-img w-full h-full object-cover" onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22700%22><rect width=%221200%22 height=%22700%22 fill=%22%23f6f1ea%22/><text x=%2250%22 y=%22350%22 font-size=%2248%22 fill=%22%236b6258%22 font-family=%22Arial%22>images/sobre.jpeg não encontrada</text></svg>';" />
-          </div>
-
-          <div class="about-photo-info p-5 sm:p-6">
-            <p class="font-signature text-2xl sm:text-3xl" style="color: var(--accent);">Karina Ramai</p>
-            <p class="mt-1 text-sm sm:text-base text-black/60 tracking-widest">Arquiteta</p>
-            <p class="mt-3 text-sm sm:text-base text-black/65 leading-relaxed">Atua em projetos residenciais e interiores com foco em materiais naturais e soluções funcionais.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= Processo ======= -->
-    <section id="processo" class="py-16 md:py-20 paper-texture">
-      <div class="mx-auto max-w-6xl px-4">
-        <h2 data-aos="fade-up" class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Como funciona</h2>
-        <p data-aos="fade-up" data-aos-delay="100" class="mt-3 text-base sm:text-lg text-black/65 max-w-2xl leading-relaxed">
-          Um processo claro reduz dúvidas, evita retrabalho e garante uma entrega fiel ao conceito.
-        </p>
-
-        <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-          <div data-aos="fade-up" data-aos-delay="100" class="rounded-3xl border border-black/10 bg-white/70 p-5 sm:p-6 shadow-soft card-hover">
-            <div class="text-xs sm:text-sm font-bold tracking-widest text-black/50">ETAPA 01</div>
-            <div class="mt-2 font-serif text-base sm:text-lg md:text-xl">Briefing</div>
-            <p class="mt-2 text-sm sm:text-base text-black/65 leading-relaxed">Entendimento do estilo, necessidades, rotina e orçamento.</p>
-          </div>
-
-          <div data-aos="fade-up" data-aos-delay="200" class="rounded-3xl border border-black/10 bg-white/70 p-5 sm:p-6 shadow-soft card-hover">
-            <div class="text-xs sm:text-sm font-bold tracking-widest text-black/50">ETAPA 02</div>
-            <div class="mt-2 font-serif text-base sm:text-lg md:text-xl">Conceito + Layout</div>
-            <p class="mt-2 text-sm sm:text-base text-black/65 leading-relaxed">Moodboard, referências e estudo do melhor fluxo do espaço.</p>
-          </div>
-
-          <div data-aos="fade-up" data-aos-delay="300" class="rounded-3xl border border-black/10 bg-white/70 p-5 sm:p-6 shadow-soft card-hover">
-            <div class="text-xs sm:text-sm font-bold tracking-widest text-black/50">ETAPA 03</div>
-            <div class="mt-2 font-serif text-base sm:text-lg md:text-xl">3D + Detalhes</div>
-            <p class="mt-2 text-sm sm:text-base text-black/65 leading-relaxed">Imagens, marcenaria, iluminação e especificações.</p>
-          </div>
-
-          <div data-aos="fade-up" data-aos-delay="400" class="rounded-3xl border border-black/10 bg-white/70 p-5 sm:p-6 shadow-soft card-hover">
-            <div class="text-xs sm:text-sm font-bold tracking-widest text-black/50">ETAPA 04</div>
-            <div class="mt-2 font-serif text-base sm:text-lg md:text-xl">Entrega / Obra</div>
-            <p class="mt-2 text-sm sm:text-base text-black/65 leading-relaxed">Documentação final e suporte para execução (opcional).</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= Na Mídia ======= -->
-    <section class="py-16 md:py-20">
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="flex items-end justify-between gap-6 flex-wrap">
-          <div data-aos="fade-right">
-            <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Na Mídia</h2>
-            <p class="mt-3 text-base sm:text-lg text-black/65 leading-relaxed">Karina Ramai em destaque na imprensa.</p>
-          </div>
-        </div>
-
-        <div class="mt-10">
-          <!-- Link Preview Card - Na Mídia -->
-          <a data-aos="fade-up" data-aos-duration="800" 
-             href="https://www.campograndenews.com.br/conteudo-patrocinado/leroy-merlin/e-possivel-transformar-a-casa-so-trocando-o-piso-e-sem-dor-de-cabeca" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="media-card group block rounded-3xl border border-black/10 bg-white/70 shadow-soft overflow-hidden card-hover">
-            
-            <div class="grid md:grid-cols-2 gap-0">
-              <!-- Imagem -->
-              <div class="relative overflow-hidden bg-[var(--paper)]">
-                <div class="aspect-[16/10] md:aspect-auto md:h-full w-full relative">
-                  <img src="assets/campo_grande_news.png" 
-                       alt="Matéria do Campo Grande News sobre a arquiteta Karina Ramai e tendências de arquitetura e decoração em Mato Grosso do Sul" 
-                       class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <!-- Overlay sutil -->
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  <!-- Badge flutuante -->
-                  <div class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1.5 sm:px-4 sm:py-2 shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent);">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                    <span class="text-xs font-semibold text-gray-700">Abrir matéria</span>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Conteúdo -->
-              <div class="p-6 sm:p-8 flex flex-col justify-center">
-                <!-- Tag da fonte -->
-                <div class="flex items-center gap-3 mb-4">
-                  <div class="h-10 w-10 rounded-2xl flex items-center justify-center" style="background: rgba(227,107,44,.12);">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent);">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="text-xs font-bold tracking-wider uppercase" style="color: var(--accent);">Campo Grande News</p>
-                    <p class="text-xs text-black/50">Conteúdo patrocinado • Leroy Merlin</p>
-                  </div>
-                </div>
-                
-                <!-- Título -->
-                <h3 class="font-serif text-xl sm:text-2xl md:text-2xl lg:text-3xl leading-snug group-hover:text-[var(--accent)] transition-colors duration-300">
-                  É possível transformar a casa só trocando o piso e sem dor de cabeça
-                </h3>
-                
-                <!-- Descrição -->
-                <p class="mt-4 text-sm sm:text-base text-black/60 leading-relaxed">
-                  Karina Ramai compartilha dicas e soluções práticas para renovar ambientes de forma simples e eficiente.
-                </p>
-                
-                <!-- Call to action -->
-                <div class="mt-6 inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300" style="color: var(--accent);">
-                  <span class="relative">
-                    Ler matéria completa
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--accent)] group-hover:w-full transition-all duration-300"></span>
-                  </span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= Depoimentos (placeholder comum) =======
-    <section class="py-16 md:py-20 paper-texture">
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="flex items-end justify-between gap-6 flex-wrap">
-          <div data-aos="fade-right">
-            <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Depoimentos</h2>
-            <p class="mt-3 text-base sm:text-lg text-black/65 leading-relaxed">Substitua por depoimentos reais quando tiver.</p>
-          </div>
-        </div>
-
-        <div class="mt-10 grid md:grid-cols-3 gap-6">
-          <figure data-aos="fade-up" data-aos-delay="100" class="rounded-3xl border border-black/10 bg-white/70 p-7 shadow-soft card-hover">
-            <blockquote class="text-sm text-black/70 leading-relaxed">
-              "A Karina entendeu perfeitamente o que a gente queria e trouxe soluções que não tínhamos imaginado."
-            </blockquote>
-            <figcaption class="mt-4 text-sm font-semibold">Cliente • Residencial</figcaption>
-          </figure>
-
-          <figure data-aos="fade-up" data-aos-delay="200" class="rounded-3xl border border-black/10 bg-white/70 p-7 shadow-soft card-hover">
-            <blockquote class="text-sm text-black/70 leading-relaxed">
-              "Processo organizado e detalhado. A obra ficou muito mais tranquila com as orientações do projeto."
-            </blockquote>
-            <figcaption class="mt-4 text-sm font-semibold">Cliente • Interiores</figcaption>
-          </figure>
-
-          <figure data-aos="fade-up" data-aos-delay="300" class="rounded-3xl border border-black/10 bg-white/70 p-7 shadow-soft card-hover">
-            <blockquote class="text-sm text-black/70 leading-relaxed">
-              “O resultado final ficou sofisticado e aconchegante — exatamente como imaginávamos.”
-            </blockquote>
-            <figcaption class="mt-4 text-sm font-semibold">Cliente • Apartamento</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-    ======= Fim Depoimentos ======= -->
-
-    <!-- ======= Contato ======= -->
-    <section id="contato" class="py-16 md:py-20 paper-texture">
-      <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-start">
-
-        <div data-aos="fade-right" data-aos-duration="800">
-          <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Vamos conversar</h2>
-          <p class="mt-3 text-base sm:text-lg text-black/65 leading-relaxed max-w-xl">
-            Envie uma mensagem com o tipo de projeto, cidade e uma breve ideia do que você precisa.
-            Retorno em até 1 dia útil.
-          </p>
-
-          <div class="mt-8 grid gap-3">
-            <div class="rounded-2xl border border-black/10 bg-white/70 p-4">
-              <div class="text-xs font-bold tracking-widest text-black/50">WHATSAPP</div>
-              <div class="mt-1 font-semibold">(67) 99238-3740</div>
-              <div class="text-sm text-black/60">Clique no botão ao lado para iniciar.</div>
-            </div>
-
-            <div class="rounded-2xl border border-black/10 bg-white/70 p-4">
-              <div class="text-xs font-bold tracking-widest text-black/50">E-MAIL</div>
-              <div class="mt-1 font-semibold">arqkarinaramai@gmail.com</div>
-            </div>
-          </div>
-
-          <a id="whatsBtn"
-             class="mt-6 inline-flex items-center justify-center btn-accent rounded-2xl px-6 py-3 font-semibold shadow-soft w-full sm:w-auto"
-             href="#"
-             aria-label="Falar no WhatsApp">
-            Falar no WhatsApp
-          </a>
-
-          <p class="mt-4 text-xs text-black/55">
-            Dica: se você já tiver um link/QR Code, coloque também na seção (como no cartão de visitas).
-          </p>
-        </div>
-
-        <!-- Form -->
-        <div data-aos="fade-left" data-aos-duration="800" class="rounded-3xl border border-black/10 bg-white/70 shadow-soft p-7">
-          <h3 class="font-serif text-2xl">Solicitar orçamento</h3>
-          <p class="mt-1 text-sm text-black/65">Formulário simples (troque para integração real depois).</p>
-
-          <form id="leadForm" class="mt-6 grid gap-4" novalidate>
-            <div>
-              <label class="text-sm font-semibold">Nome</label>
-              <input class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 ring-accent"
-                     type="text" name="nome" placeholder="Seu nome" required />
-              <p class="mt-1 text-xs text-red-600 hidden" data-error="nome">Informe seu nome.</p>
-            </div>
-
-            <div>
-              <label class="text-sm font-semibold">WhatsApp</label>
-              <input class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 ring-accent"
-                     type="tel" name="whatsapp" placeholder="(DDD) 9 xxxx-xxxx" required />
-              <p class="mt-1 text-xs text-red-600 hidden" data-error="whatsapp">Informe um WhatsApp válido.</p>
-            </div>
-
-            <div>
-              <label class="text-sm font-semibold">Tipo de projeto</label>
-              <select class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 ring-accent"
-                      name="tipo" required>
-                <option value="">Selecione…</option>
-                <option>Arquitetura residencial</option>
-                <option>Interiores</option>
-                <option>Comercial</option>
-                <option>Consultoria</option>
-              </select>
-              <p class="mt-1 text-xs text-red-600 hidden" data-error="tipo">Selecione um tipo.</p>
-            </div>
-
-            <div>
-              <label class="text-sm font-semibold">Mensagem</label>
-              <textarea class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 ring-accent"
-                        name="mensagem" rows="4" placeholder="Conte um pouco sobre seu projeto" required></textarea>
-              <p class="mt-1 text-xs text-red-600 hidden" data-error="mensagem">Escreva uma mensagem.</p>
-            </div>
-
-            <button class="btn-accent rounded-2xl px-6 py-3 font-semibold shadow-soft">
-              Enviar
-            </button>
-
-            <p id="formSuccess" class="text-sm font-semibold hidden" style="color: var(--accent);">
-              Mensagem pronta! Abrindo WhatsApp…
-            </p>
-
-            <p class="text-xs text-black/55">
-              *Este formulário monta a mensagem e abre o WhatsApp. <!-- Para envio real por e-mail/CRM, integre com API. -->
-            </p>
-          </form>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======= Footer ======= -->
-    <footer class="border-t border-black/5 bg-white/50 paper-texture">
-      <div class="mx-auto max-w-6xl px-4 py-10">
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <!-- ================= (04) Processo ================= -->
+    <section class="section process" id="processo" aria-labelledby="processo-titulo">
+      <div class="wrap">
+        <div class="sec-head sec-head--simple">
+          <span class="sec-num" data-reveal>(04)</span>
           <div>
-            <div class="flex items-baseline gap-1">
-              <span class="font-signature text-3xl leading-none" style="color: var(--accent);">Karina</span>
-              <span class="font-signature text-3xl leading-none" style="color: var(--taupe);">Ramai</span>
-            </div>
-            <p class="mt-2 text-sm text-black/60">Arquitetura • Interiores • Acompanhamento</p>
-            
-            <!-- Redes Sociais -->
-            <div class="mt-4 flex items-center gap-3">
-              <a href="https://www.instagram.com/arq.karinaramai/" target="_blank" rel="noopener noreferrer" class="h-10 w-10 rounded-full border border-black/10 bg-white/70 flex items-center justify-center transition-all duration-300 hover:border-[var(--accent)] hover:bg-[rgba(227,107,44,.1)] hover:scale-110" aria-label="Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24" style="color: var(--accent);">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-              </a>
-              <a href="https://br.linkedin.com/in/karina-ramai-1385b3177" target="_blank" rel="noopener noreferrer" class="h-10 w-10 rounded-full border border-black/10 bg-white/70 flex items-center justify-center transition-all duration-300 hover:border-[var(--accent)] hover:bg-[rgba(227,107,44,.1)] hover:scale-110" aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24" style="color: var(--accent);">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="text-sm text-black/60 text-left md:text-right">
-            <p>© <span id="year"></span> Karina Ramai. Todos os direitos reservados.</p>
-            <p class="mt-1">Desenvolvido por <a href="https://github.com/gustavo-brandao" target="_blank" rel="noopener noreferrer" class="font-medium text-black/70 hover:text-[var(--accent)] transition-colors duration-300">Gustavo Brandão Gimenez</a></p>
+            <h2 id="processo-titulo" class="sec-title font-serif" data-reveal>Como <em>funciona</em></h2>
+            <p class="sec-lead" data-reveal>Um processo claro reduz dúvidas, evita retrabalho e garante uma entrega fiel ao conceito.</p>
           </div>
         </div>
-        <!-- Política de Privacidade -->
-        <div class="privacy-notice mt-8 pt-6 border-t border-black/5">
-          <p class="text-xs text-black/45 leading-relaxed max-w-4xl">
-            <span class="font-medium text-black/55">Política de Privacidade:</span>
-            Este site utiliza ferramentas de análise de tráfego, como o Google Analytics, para fins estatísticos e de melhoria da experiência do usuário. As informações coletadas não identificam o visitante individualmente. Nenhum dado sensível é armazenado ou compartilhado com terceiros para fins comerciais.
-          </p>
-        </div>      </div>
-    </footer>
+
+        <ol class="steps" id="steps">
+          <li class="steps-line" aria-hidden="true"><i id="stepsProgress"></i></li>
+          <li class="step" data-reveal>
+            <span class="step-dot" aria-hidden="true"></span>
+            <span class="step-num font-serif">01</span>
+            <h3 class="font-serif">Briefing</h3>
+            <p>Entendimento do estilo, necessidades, rotina e orçamento.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-dot" aria-hidden="true"></span>
+            <span class="step-num font-serif">02</span>
+            <h3 class="font-serif">Conceito + Layout</h3>
+            <p>Moodboard, referências e estudo do melhor fluxo do espaço.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-dot" aria-hidden="true"></span>
+            <span class="step-num font-serif">03</span>
+            <h3 class="font-serif">3D + Detalhes</h3>
+            <p>Imagens realistas, marcenaria, iluminação e especificações.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-dot" aria-hidden="true"></span>
+            <span class="step-num font-serif">04</span>
+            <h3 class="font-serif">Entrega / Obra</h3>
+            <p>Documentação final e suporte para execução (opcional).</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= (05) Na mídia ================= -->
+    <section class="section wrap" id="midia" aria-labelledby="midia-titulo">
+      <div class="sec-head sec-head--simple">
+        <span class="sec-num" data-reveal>(05)</span>
+        <div>
+          <h2 id="midia-titulo" class="sec-title font-serif" data-reveal>Na <em>mídia</em></h2>
+          <p class="sec-lead" data-reveal>Karina Ramai em destaque na imprensa.</p>
+        </div>
+      </div>
+
+      <a class="press-card" data-reveal
+         href="https://www.campograndenews.com.br/conteudo-patrocinado/leroy-merlin/e-possivel-transformar-a-casa-so-trocando-o-piso-e-sem-dor-de-cabeca"
+         target="_blank" rel="noopener noreferrer">
+        <span class="mat press-media"><span class="photo">
+          <img src="/img/campo_grande_news-922.webp" loading="lazy" width="922" height="904"
+               srcset="/img/campo_grande_news-480.webp 480w, /img/campo_grande_news-922.webp 922w"
+               sizes="(max-width: 900px) 90vw, 520px"
+               alt="Matéria do Campo Grande News com a arquiteta Karina Ramai sobre renovação de ambientes" />
+        </span></span>
+        <span class="press-body">
+          <span class="press-source"><strong>Campo Grande News</strong> · Conteúdo patrocinado — Leroy Merlin</span>
+          <span class="press-title font-serif">É possível transformar a casa só trocando o piso e sem dor de cabeça</span>
+          <span class="press-desc">Karina Ramai compartilha dicas e soluções práticas para renovar ambientes de forma simples e eficiente.</span>
+          <span class="press-link">Ler matéria completa <span aria-hidden="true">↗</span></span>
+        </span>
+      </a>
+    </section>
+
+    <!-- ================= (06) Contato ================= -->
+    <section class="contact" id="contato" aria-labelledby="contato-titulo">
+      <div class="wrap contact-grid">
+        <div class="contact-intro">
+          <span class="sec-num" data-reveal>(06)</span>
+          <h2 id="contato-titulo" class="contact-title font-serif" data-reveal>Vamos conversar sobre o seu <em>projeto?</em></h2>
+          <p class="contact-lead" data-reveal>Envie uma mensagem com o tipo de projeto, cidade e uma breve ideia do que você precisa. Retorno em até 1 dia útil.</p>
+
+          <ul class="contact-list" data-reveal>
+            <li>
+              <a href="https://wa.me/5567992383740?text=Ol%C3%A1%2C%20Karina!%20Gostaria%20de%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">
+                <small>WhatsApp</small><span>(67) 99238-3740</span><i aria-hidden="true">↗</i>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:arqkarinaramai@gmail.com"><small>E-mail</small><span>arqkarinaramai@gmail.com</span><i aria-hidden="true">↗</i></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/arq.karinaramai/" target="_blank" rel="noopener noreferrer"><small>Instagram</small><span>@arq.karinaramai</span><i aria-hidden="true">↗</i></a>
+            </li>
+          </ul>
+        </div>
+
+        <form class="form" id="leadForm" novalidate data-reveal>
+          <h3 class="font-serif">Solicitar orçamento</h3>
+          <p class="form-hint">Preencha e enviaremos sua mensagem direto pelo WhatsApp.</p>
+
+          <div class="field">
+            <input id="f-nome" name="nome" type="text" autocomplete="name" placeholder=" " required />
+            <label for="f-nome">Nome</label>
+            <p class="field-error" id="e-nome">Informe seu nome.</p>
+          </div>
+          <div class="field">
+            <input id="f-whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder=" " required />
+            <label for="f-whatsapp">WhatsApp com DDD</label>
+            <p class="field-error" id="e-whatsapp">Informe um WhatsApp válido.</p>
+          </div>
+          <div class="field field--select">
+            <select id="f-tipo" name="tipo" required>
+              <option value="" disabled selected hidden></option>
+              <option>Arquitetura residencial</option>
+              <option>Interiores</option>
+              <option>Comercial</option>
+              <option>Acompanhamento de obra</option>
+              <option>Consultoria</option>
+            </select>
+            <label for="f-tipo">Tipo de projeto</label>
+            <p class="field-error" id="e-tipo">Selecione um tipo.</p>
+          </div>
+          <div class="field">
+            <textarea id="f-mensagem" name="mensagem" rows="3" placeholder=" " required></textarea>
+            <label for="f-mensagem">Conte um pouco sobre seu projeto</label>
+            <p class="field-error" id="e-mensagem">Escreva uma mensagem.</p>
+          </div>
+
+          <button type="submit" class="btn btn--block">Enviar pelo WhatsApp <span aria-hidden="true">→</span></button>
+          <p class="form-success" id="formSuccess" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
   </main>
 
-  <!-- ======= Modal Portfólio (Lightbox) ======= -->
-  <div id="modal" class="hidden opacity-0 transition-opacity duration-300 ease-out">
-    <div class="modal-backdrop absolute inset-0 opacity-0 transition-opacity duration-300 ease-out"></div>
+  <!-- ================= Footer ================= -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <a href="#topo" class="footer-sign font-signature" aria-label="Voltar ao topo"><span>Karina</span> <span>Ramai</span></a>
+        <div class="footer-cols">
+          <nav aria-label="Rodapé">
+            <a href="#projetos">Projetos</a>
+            <a href="#sobre">A arquiteta</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#processo">Processo</a>
+            <a href="#contato">Contato</a>
+          </nav>
+          <div class="footer-contact">
+            <p>Campo Grande, MS</p>
+            <a href="mailto:arqkarinaramai@gmail.com">arqkarinaramai@gmail.com</a>
+            <a href="https://wa.me/5567992383740" target="_blank" rel="noopener noreferrer">(67) 99238-3740</a>
+            <div class="social">
+              <a href="https://www.instagram.com/arq.karinaramai/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+              </a>
+              <a href="https://br.linkedin.com/in/karina-ramai-1385b3177" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.97c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <div id="modalContent" class="relative border border-white/10 shadow-2xl transform scale-95 opacity-0 translate-y-8 transition-all duration-500 ease-out">
-      <button id="modalClose"
-              class="absolute top-2 right-2 sm:top-3 sm:right-3 z-10 rounded-full bg-white/90 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold hover:bg-white active:scale-95 transition-all duration-200">
-        Fechar
-      </button>
+      <div class="footer-privacy" id="privacidade">
+        <p><strong>Política de Privacidade:</strong> Este site utiliza ferramentas de análise de tráfego, como o Google Analytics, para fins estatísticos e de melhoria da experiência do usuário. As informações coletadas não identificam o visitante individualmente. Nenhum dado sensível é armazenado ou compartilhado com terceiros para fins comerciais.</p>
+      </div>
 
-      <!-- Botões de navegação -->
-      <button id="modalPrev" class="hidden absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white/90 p-2 sm:p-3 text-xl font-bold hover:bg-white active:scale-95 transition-all duration-200 shadow-lg">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-      </button>
-      <button id="modalNext" class="hidden absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white/90 p-2 sm:p-3 text-xl font-bold hover:bg-white active:scale-95 transition-all duration-200 shadow-lg">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-      </button>
-
-      <img id="modalImg" src="" alt="" class="bg-black transition-opacity duration-300 ease-out" />
-      <div class="p-3 sm:p-4 md:p-5 bg-white">
-        <p id="modalTitle" class="font-serif text-lg sm:text-xl"></p>
-        <p id="modalCounter" class="text-xs sm:text-sm text-black/60 mt-1 hidden"></p>
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> Karina Ramai. Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a href="https://github.com/gustavo-brandao" target="_blank" rel="noopener noreferrer">Gustavo Brandão Gimenez</a></p>
       </div>
     </div>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a class="whats-float" id="whatsFloat" href="https://wa.me/5567992383740?text=Ol%C3%A1%2C%20Karina!%20Gostaria%20de%20falar%20sobre%20um%20projeto."
+     target="_blank" rel="noopener noreferrer" aria-label="Falar com a Karina no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.94.95-3.48-.22-.36a9.4 9.4 0 0 1-1.45-5.03C2.6 6.86 6.84 2.6 12.06 2.6c2.53 0 4.9.99 6.69 2.78a9.37 9.37 0 0 1 2.77 6.68c0 5.21-4.24 9.45-9.46 9.45zm8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.79.7.69 5.8.69 12.06c0 2 .52 3.96 1.52 5.68L.6 23.6l6-1.57a11.33 11.33 0 0 0 5.44 1.39h.01c6.26 0 11.36-5.1 11.36-11.36 0-3.03-1.18-5.89-3.32-8.03z"/></svg>
+  </a>
+
+  <!-- ================= Lightbox ================= -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle" aria-hidden="true">
+    <div class="lb-top">
+      <p class="lb-heading"><span id="lbTitle" class="font-serif"></span><span id="lbCount" class="lb-count"></span></p>
+      <button class="lb-close" id="lbClose">Fechar <span aria-hidden="true">✕</span></button>
+    </div>
+    <div class="lb-stage" id="lbStage">
+      <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Foto anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="lb-arrow lb-next" id="lbNext" aria-label="Próxima foto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <span class="lb-progress" id="lbProgress"></span>
+    </div>
+    <div class="lb-thumbs" id="lbThumbs"></div>
   </div>
 
-  <!-- ======= Cookie Consent Banner ======= -->
-  <div id="cookieBanner" class="cookie-banner">
-    <div class="cookie-content">
-      <p class="cookie-text">
-        <svg class="cookie-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10c0-.34-.017-.677-.05-1.01a1 1 0 00-1.16-.86 2.5 2.5 0 01-2.79-2.79 1 1 0 00-.86-1.16A10.028 10.028 0 0012 2zm-1.5 5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-3 4a1 1 0 110 2 1 1 0 010-2zm3 2a2 2 0 110 4 2 2 0 010-4zm5 0a1 1 0 110 2 1 1 0 010-2z"/>
-        </svg>
-        Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="#privacy" class="cookie-link">Política de Privacidade</a>.
-      </p>
-      <button id="acceptCookies" class="cookie-btn">
-        Aceitar
-      </button>
+  <!-- ================= Cookies ================= -->
+  <div class="cookie" id="cookieBanner" role="region" aria-label="Aviso de cookies" hidden>
+    <p>Usamos cookies de análise para melhorar sua experiência. Saiba mais na nossa <a href="#privacidade">Política de Privacidade</a>.</p>
+    <div class="cookie-actions">
+      <button class="cookie-decline" id="declineCookies">Agora não</button>
+      <button class="cookie-accept" id="acceptCookies">Aceitar</button>
     </div>
   </div>
 
-  <!-- AOS - Animate On Scroll -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-  <!-- JavaScript principal -->
-  <script src="js/main.js"></script>
-
-  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f171274790844045b7f0cd99eb3d854b"}'></script><!-- End Cloudflare Web Analytics -->
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f171274790844045b7f0cd99eb3d854b"}'></script>
 </body>
 </html>
