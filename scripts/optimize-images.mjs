@@ -12,7 +12,7 @@ import { join, parse } from "node:path";
 const OUT = "public/img";
 const SOURCES = [
   { dir: "assets", match: /\.(jpe?g|png)$/i },
-  { dir: "images", match: /^sobre\.jpe?g$/i },
+  { dir: "images", match: /^(sobre|projeto)\.(jpe?g|png)$/i },
 ];
 const WIDTHS = [480, 960];
 const MAX = 1600;

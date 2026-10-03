@@ -279,13 +279,15 @@
 .about { background: var(--color-paper-2); border-block: 1px solid var(--line); }
 .about-grid { display: grid; grid-template-columns: 96px minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(24px, 5vw, 80px); align-items: start; }
 .about-grid > .sec-num { padding-top: 8px; }
-.about-portrait { margin: 0; max-width: 460px; position: sticky; top: calc(var(--header-h) + 24px); }
+/* largura limitada pela altura da tela: foto + assinatura + legenda sempre cabem enquanto ficam "presas" */
+.about-portrait { margin: 0; width: min(100%, 460px, calc((100svh - var(--header-h) - 230px) * 0.75)); position: sticky; top: calc(var(--header-h) + 24px); }
 .about-portrait .mat { aspect-ratio: 3 / 4; }
 .about-portrait .photo img { object-position: center 18%; }
 .signature { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; margin-top: 18px; }
 .signature .font-signature { font-size: clamp(42px, 3.8vw, 56px); color: var(--color-accent); line-height: 1.05; white-space: nowrap; }
 .signature-bar { flex: 1 1 32px; max-width: 72px; min-width: 32px; height: 1px; background: var(--line); }
 .signature small { font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-taupe-ink); white-space: nowrap; }
+.about-caption { margin-top: 12px; max-width: 380px; font-size: 14px; line-height: 1.65; color: var(--color-taupe-ink); }
 .quote { margin-top: 22px; font-weight: 400; font-size: clamp(30px, 3.2vw, 48px); line-height: 1.16; letter-spacing: -0.01em; }
 .quote em { color: var(--color-accent); }
 .quote::before { content: "“"; display: block; font-size: 2.3em; line-height: 0.6; color: var(--color-accent); opacity: 0.35; margin-bottom: 4px; }
@@ -372,6 +374,24 @@
 .press-link { margin-top: 28px; align-self: flex-start; font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; padding-bottom: 5px; border-bottom: 1px solid var(--color-accent); transition: gap 0.5s var(--ease), color 0.3s; }
 .press-card:hover .press-link { color: var(--color-accent); }
 @media (max-width: 900px) { .press-card { grid-template-columns: 1fr; } }
+
+/* =========================================================
+   Chamada "Quer fazer um projeto conosco?"
+   ========================================================= */
+.cta { background: var(--color-paper-2); border-top: 1px solid var(--line); }
+.cta-grid { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(36px, 6vw, 96px); align-items: center; }
+.cta-media { margin: 0; width: min(100%, 520px); justify-self: end; }
+.cta-media .photo { aspect-ratio: 658 / 593; }
+.photo--plain img { filter: none; } /* arte com texto: mantém as cores originais */
+.photo--plain::after { display: none; }
+.cta-title { margin-top: 18px; font-weight: 400; font-size: clamp(36px, 4.2vw, 62px); line-height: 1.06; letter-spacing: -0.015em; }
+.cta-title em { color: var(--color-accent); }
+.cta-text { margin-top: 20px; max-width: 440px; font-size: 17px; line-height: 1.7; color: rgb(31 31 31 / 0.68); font-weight: 300; }
+.cta-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; margin-top: 34px; }
+@media (max-width: 900px) {
+  .cta-grid { grid-template-columns: 1fr; }
+  .cta-media { justify-self: center; }
+}
 
 /* =========================================================
    Contato (fundo escuro)
