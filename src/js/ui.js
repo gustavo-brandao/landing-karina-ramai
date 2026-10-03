@@ -6,6 +6,19 @@ export function initUI() {
 
   initProcessLine();
   initWhatsFloat();
+  initImageFade();
+}
+
+/* Fotos surgem suavemente quando terminam de carregar (sem "pipocar" ao rolar rápido) */
+function initImageFade() {
+  $$(".photo img").forEach((img) => {
+    const done = () => img.classList.add("is-loaded");
+    if (img.complete) done();
+    else {
+      img.addEventListener("load", done, { once: true });
+      img.addEventListener("error", done, { once: true });
+    }
+  });
 }
 
 /* Linha do processo "desenha" conforme a rolagem e acende as etapas */
@@ -37,16 +50,20 @@ function initProcessLine() {
   update();
 }
 
-/* Botão flutuante do WhatsApp: aparece depois do topo e some na seção de contato */
+/* Botão flutuante do WhatsApp: aparece depois do topo e some no contato e no rodapé (que já têm os contatos) */
 function initWhatsFloat() {
   const btn = $("#whatsFloat");
   const hero = $("#topo");
-  const contact = $("#contato");
-  if (!btn || !hero || !contact) return;
+  const zones = [$("#contato"), $(".footer")].filter(Boolean);
+  if (!btn || !hero) return;
   let pastHero = false;
-  let atContact = false;
-  const render = () => btn.classList.toggle("is-visible", pastHero && !atContact);
+  const inZone = new Set();
+  const render = () => btn.classList.toggle("is-visible", pastHero && inZone.size === 0);
 
   new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; render(); }, { rootMargin: "-40% 0px 0px 0px" }).observe(hero);
-  new IntersectionObserver(([e]) => { atContact = e.isIntersecting; render(); }, { threshold: 0.15 }).observe(contact);
+  const zoneIO = new IntersectionObserver((entries) => {
+    entries.forEach((e) => (e.isIntersecting ? inZone.add(e.target) : inZone.delete(e.target)));
+    render();
+  }, { threshold: 0.05 });
+  zones.forEach((z) => zoneIO.observe(z));
 }
